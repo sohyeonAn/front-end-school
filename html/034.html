@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부정 선택자</title>
+  <style>
+    /* li중에 one클래스를 갖지 않은 것만 */
+    li:not(.one) {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li class="one">hi</li>
+    <li class="one">hi</li>
+    <li class="two">hi</li>
+    <li class="one">hi</li>
+    <li class="one">hi</li>
+  </ul>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css selector - 속성선택자</title>
+  <style>
+    /* href의 값이 동일한 a */
+    a[href="http://www.naver.co.kr"] {
+      font-size: 48px;
+    }
+
+    /* 
+      단어기준으로 해당 변수를 포함하는 
+      단어기준이기때문에 paullabs 는 포함되지 않는다.
+    */
+    a[href~="paullab"] {
+      font-weight: normal;
+    }
+
+    /* 문자기준으로 해당 변수를 포함하는 */
+    a[href*="paullab"] {
+      font-weight: bold;
+    }
+
+    /* 속성값이 변수로 끝나는 */
+    a[href$=".pdf"]{
+      color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="http://www.naver.co.kr">click!</a>
+  <a href="http://www.paullab.co.kr">click!</a>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css selector - 속성선택자</title>
+  <style>
+    /* href속성을 가진 a */
+    a[href] {
+      font-size: 30px;
+    }
+
+    /* href의 값이 동일한 a */
+    a[href="http://www.paullab.co.kr"] {
+      font-size: 48px;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="http://www.paullab.co.kr">click!</a>
+  <a href="#">click!</a>
+  <a>click!</a>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가변크기 단위</title>
+  <style>
+    .one {
+      /* %는 부모가 가진 크기의 백분율 단위 */
+      width: 50%; 
+      height: 200px;
+      background-color: darkblue;
+    }
+
+    .two {
+      height: 100px;
+      width: 50%;
+      background-color: red;
+    }
+
+    .three {
+      /* vw(view-width)는 화면비 백분율 단위  */
+      width: 50vw;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- em, %, rem, vw, vh -->
+  <div class="one">
+    <div class="two"></div>
+  </div>
+
+  <br/>
+
+  <div class="one">
+    <div class="three"></div>
+  </div>
+</body>
+
+</html>
