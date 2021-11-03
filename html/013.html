@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테이블 태그</title>
+  <style>
+    table {
+      width: 100%;
+    }
+
+    table,
+    tr,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    .구분 {
+      width: 10%;
+    }
+
+    .이름 {
+      width: 20%;
+    }
+
+    .가격 {
+      width: 30%;
+    }
+
+    .판매량 {
+      width: 20%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- table은 ui의 골격을 잡기 위해 사용하지 않아요! -->
+  <table>
+    <!-- caption은 table의 설명이나 제목을 넣는다. -->
+    <caption>
+      멋사 서점 판매량
+    </caption>
+
+    <!-- column을 그룹으로 묶음. -->
+    <colgroup>
+      <col class="구분" />
+      <col class="이름" />
+      <col class="가격" />
+      <col class="판매량" />
+    </colgroup>
+
+    <thead>
+      <tr>
+        <!-- th는 글씨 굵고 가운데 정렬 -->
+        <th>구분</th>
+        <th>책이름</th>
+        <th>책가격</th>
+        <th>책판매량</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>hello1</td>
+        <td>1000</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>hello2</td>
+        <td>2000</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>hello3</td>
+        <td>3000</td>
+        <td>3</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <!-- 컬럼의 경계선이 무너지니깐 colspan이 맞다. (옆으로 합치기) -->
+        <td colspan="3">총 판매량</td>
+        <td>6</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+
+</html>
