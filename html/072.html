@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+  <style>
+    /*code base*/
+
+    body {
+      font-family: sans-serif;
+      box-sizing: border-box;
+      font-weight: 600;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      /* justify-content: flex-start; */
+      /* justify-content: center; */
+      /* justify-content: flex-end; */
+      /* justify-content: space-between; */
+      /* justify-content: space-around;  */
+      /* justify-content: space-evenly; */
+
+      background: #f9f1f0;
+      border: 2px solid black;
+      width: 700px;
+      height: 500px;
+    }
+
+    .box {
+      background-color: pink;
+      border: 2px solid black;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+  </div>
+</body>
+
+</html>

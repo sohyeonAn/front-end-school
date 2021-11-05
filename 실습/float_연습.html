@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float 연습</title>
+  <style>
+    body {
+      font-size: 0;
+    }
+
+    .line {
+      height: 100px;
+    }
+
+    .line.first-line {
+      width: 390px;
+      background-color: tomato;
+    }
+
+    .line.second-line{
+      height: auto;
+      background-color: white;
+    }
+
+    .second-line .baby {
+      /* display: inline-block; */
+      float: left;
+      width: 130px;
+      height: 200px;
+      background-color: #000;
+    }
+
+    .second-line .baby:nth-child(1) {
+      background-color: orange;
+    }
+
+    .second-line .baby:nth-child(2) {
+      background-color: yellow;
+    }
+
+    .second-line .baby:nth-child(3) {
+      background-color: greenyellow;
+    }
+
+    .line.third-line {
+      width: 390px;
+      background-color: blue;
+      clear: left;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="line first-line"></div>
+  <div class="line second-line">
+    <div class="baby"></div>
+    <div class="baby"></div>
+    <div class="baby"></div>
+  </div>
+  <div class="line third-line"></div>
+</body>
+
+</html>
