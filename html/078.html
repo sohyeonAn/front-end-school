@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>align-self, order</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <style>
+    ul {
+      height: 100vh;
+      display: flex;
+      /* align-items: flex-end; */
+    }
+
+    li {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      border: 1px solid black;
+    }
+
+    .first {
+      order: -1;
+    }
+    .second {
+      order: -2;
+    }
+    .third {
+      order: 3;
+    }
+    .fourth {
+      order: 4;
+    }
+    .fifth {
+      order: 5;
+      /* align-self: flex-start; */
+    } 
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li class="first">1</li>
+    <li class="second">2</li>
+    <li class="third">3</li>
+    <li class="fourth">4</li>
+    <li class="fifth">5</li>
+  </ul>
+</body>
+
+</html>
