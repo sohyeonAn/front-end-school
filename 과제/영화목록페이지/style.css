@@ -24,8 +24,26 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  padding-bottom: 3px;
 }
 
+/* 스킵네비게이션 */
+.nav-skip a {
+  position: absolute;
+  top: -200px;
+  left: 0;
+  width: 160px;
+  line-height: 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: #333;
+  text-align: center;
+}
+
+.nav-skip a:active, 
+.nav-skip a:focus {
+  top: 0;
+}
 /* style */
 .cont-movie {
   width: 1006px;
@@ -45,7 +63,7 @@
 }
 
 .cont-movie .nav-movie::before {
-  display:block;
+  display: block;
   content: "";
   width: 650px;
   height: 2px;
@@ -65,9 +83,11 @@
 .cont-movie .list-movieNav li {
   float: left;
 }
-.cont-movie .list-movieNav li + li {
-  margin-left:  60px;
+
+.cont-movie .list-movieNav li+li {
+  margin-left: 60px;
 }
+
 .cont-movie .list-movieNav .link-nav {
   color: #B2B2B2;
 }
@@ -77,4 +97,201 @@
   font-weight: bold;
 }
 
+.cont-movie .list-movieInfo {
+  overflow: hidden;
+  padding: 12px;
+  border: 2px solid #BDBDBD;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.cont-movie .list-movieInfo .movie-title {
+  font-weight: bold;
+  line-height: 23px;
+}
+
+.cont-movie .list-movieInfo li {
+  overflow: hidden;
+  float: left;
+  border: 1px solid #BDBDBD;
+  border-radius: 12px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin: 12px;
+}
+
+.cont-movie .list-movieInfo li>a[class^="link"] {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  height: 41px;
+  line-height: 41px;
+  background: #f2f2F2;
+  border-top: 1px solid #BDBDBD;
+}
+
+.cont-movie .list-movieInfo li .link-reserv::after {
+  content: "";
+  /* display: inline-block; */
+  float: right;
+  width: 1px;
+  height: 100%;
+  background: #bdbdbd;
+}
+
+.cont-movie .list-movieInfo li .link-teaser::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("./images/btn_play.png");
+  vertical-align: top;
+  margin: 13px 4px 0 0;
+}
+
+.cont-movie .list-movieInfo .link-movie {
+  display: block;
+  margin-bottom: 11px;
+
+}
+
+.list-movieInfo .list-info {
+  margin-top: 12px;
+}
+
+.list-movieInfo article {
+  width: 180px;
+  padding: 19px 19px 0 19px;
+}
+
+.list-movieInfo .list-info dt,
+.list-movieInfo .list-info dd {
+  display: inline-block;
+  font-size: 13px;
+  vertical-align: top;
+  line-height: 1.2;
+}
+
+.list-movieInfo .list-info dt {
+  font-weight: lighter;
+  color: #828282;
+}
+
+.list-movieInfo .list-info .ml-ellipsis {
+  width: 140px;
+  height: 28px;
+  float: right;
+  display: -webkit-box;
+  margin-left: 5px;
+}
+
+.list-movieInfo .list-info .item-star {
+  float: right;
+}
+
+.list-movieInfo .list-info .item-star dt::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 13px;
+  margin-left: 5px;
+  background: url("./images/star.png");
+  vertical-align: top;
+}
+
+.list-movieInfo .list-info div {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.cont-company {
+  background: #F2F2F2;
+  margin-top: 135px;
+}
+
+.cont-company .cont-coInfo {
+  position: relative;
+  overflow: hidden;
+  width: 1189px;
+  margin: 0 auto;
+}
+
+.cont-company .cont-coInfo .company-title {
+  display: block;
+  font-size: 22px;
+  height: 118px;
+  line-height: 118px;
+  border-bottom: 2px solid #c4c4c4;
+  font-weight: 700;
+}
+
+.cont-company .cont-coInfo .list-coInfo {
+  float: left;
+  margin: 38px 0;
+}
+
+.cont-company .cont-coInfo .list-coInfo dt,
+.cont-company .cont-coInfo .list-coInfo dd {
+  display: inline-block;
+  float: left;
+}
+
+.cont-company .cont-coInfo .list-coInfo dt {
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.cont-company .cont-coInfo .list-coInfo dd {
+  font-weight: 400;
+}
+
+.cont-company .cont-coInfo .list-coInfo dd::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin: 0 12px;
+  background: #B2B2B2;
+}
+
+.cont-company .cont-coInfo .list-coInfo dd:last-child::after {
+  display: none;
+}
+
+.cont-company .list-sns {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+.cont-company .list-sns li {
+  float: left;
+  margin-left: 22px;
+}
+
+.cont-company .list-sns a[class^="link"] {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  font-size: 1px;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.cont-company .list-sns .link-twitter {
+  background: url("./images/twitter.png");
+}
+.cont-company .list-sns .link-insta {
+  background: url("./images/instagram.png");
+}
+.cont-company .list-sns .link-facebook {
+  background: url("./images/facebook.png");
+}
+
+.cont-company .txt-copy {
+  float: right;
+  font-size: 14px;
+  margin-top: 38px;
+  font-weight: bold;
+  text-align: center;
+}
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>빌딩 올리기</title>
+  <style>
+    @keyframes hojun {
+      from {
+        background-position: 0px, 0px;
+      }
+
+      to {
+        background-position: -3730px, 0;
+      }
+    }
+
+    .building1 {
+      width: 110px;
+      height: 180px;
+      background: url("../images/building/building1.png") no-repeat;
+      animation: hojun 5s steps(33);
+      animation-fill-mode: forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="building1"></div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* 키프레임 이름 == 애니메이션 이름 */
+    @keyframes sohyeon {
+      0% {
+        background-color: antiquewhite;
+        transform: translate(0, 0);
+      }
+
+      100% {
+        background-color: tomato;
+        transform: translate(300px, 0) rotate(360deg) scale(2);
+      }
+    }
+
+    div {
+      margin: 200px;
+      width: 100px;
+      height: 100px;
+
+      animation: sohyeon 5s infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <div>hello world</div>
+</body>
+
+</html>
