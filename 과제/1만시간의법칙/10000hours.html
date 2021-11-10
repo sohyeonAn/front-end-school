@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1만 시간의 법칙</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/10000hours.css">
+  <style>
+    body {
+      background-color: #5B2386;
+      font-family: 'GmarketSansMedium';
+      color: white;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 50px auto;
+    }
+
+    strong {
+      font-family: 'GmarketSansBold';
+    }
+
+    .title-container {
+      position: relative;
+      margin: 0 auto;
+      width: 564px;
+      height: 265px;
+      margin-bottom: 46px;
+    }
+
+    .title-text {
+      position: absolute;
+      top: 74px;
+      width: 564px;
+      height: 112px;
+    }
+
+    .title-clock {
+      position: absolute;
+      left: 150px;
+      width: 265px;
+      height: 265px;
+    }
+
+    .ment-container {
+      text-align: center;
+      position: relative;
+    }
+
+    .ment-container .ment1 {
+      color: #F5DF4D;
+      font-family: 'OTEnjoystoriesBA';
+      font-size: 36px;
+      margin-bottom: 78px;
+    }
+
+    .ment-container .ment2 {
+      position: relative;
+      margin-bottom: 102px;
+    }
+
+    .ment-container .ment2 img {
+      position: absolute;
+      top: 25px;
+      left: 0;
+    }
+
+    .ment-container .ment2 p {
+      font-size: 18px;
+      line-height: 35px;
+      text-align: center;
+    }
+
+    .ment-container .ment2 p>strong {
+      font-size: 24px;
+    }
+
+    .input-container {
+      font-size: 24px;
+      line-height: 57px;
+      margin-bottom: 115px;
+    }
+
+    .input-container p {
+      text-align: center;
+    }
+
+    .input-container .input {
+      display: inline-block;
+      box-sizing: border-box;
+      border-radius: 7px;
+      border: none;
+      width: 228px;
+      height: 57px;
+      padding: 17px 39px;
+      font-size: 24px;
+    }
+
+    .input-container .input::placeholder {
+      color: #BABCBE;
+      font-family: 'GmarketSansMedium';
+    }
+
+    .hours-btn-container {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 147px;
+    }
+
+    .hours-btn-container .hours-btn {
+      color: #5B2386;
+      font-size: 24px;
+      background-color: #FCEE21;
+      padding: 21px 49px;
+      border-radius: 56px;
+      font-family: 'GmarketSansBold';
+    }
+
+    .hours-btn-container img {
+      position: relative;
+      width: 64px;
+      height: 72px;
+      top: 17px;
+      left: 5px;
+    }
+
+    .answer-container {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 127px;
+    }
+
+    .answer-container strong {
+      font-size: 72px;
+    }
+
+    .result-btn-container {
+      font-family: 'GmarketSansBold';
+      margin-bottom: 130px;
+    }
+
+    .result-btn-container a {
+      border-radius: 56px;
+      padding: 21px 49px;
+      font-size: 24px;
+    }
+
+    .result-btn-container .go-train-btn {
+      background-color: #FCEE21;
+      color: #5B2386;
+      margin-right: 18px;
+    }
+
+    .result-btn-container .share-btn {
+      background-color: #fff;
+      color: #5B2386;
+    }
+
+    .copyright-container {
+      text-align: center;
+      font-size: 12px;
+      font-family: 'Noto Sans KR';
+      line-height: 17px;
+    }
+
+    .copyright-container>img {
+      margin-bottom: 20px;
+      width: 125px;
+      height: 25px;
+    }
+
+
+    @media screen and (max-width:380px) {
+      .title-container {
+        position: relative;
+        margin: 0 auto;
+        width: 267px;
+        height: 126px;
+        margin-bottom: 31px;
+      }
+
+      .title-text {
+        position: absolute;
+        top: 35px;
+        width: 267px;
+        height: 53px;
+      }
+
+      .title-clock {
+        position: absolute;
+        left: 71px;
+        width: 125px;
+        height: 125px;
+      }
+
+      .ment-container .ment1 {
+        font-size: 24px;
+        margin-bottom: 62px;
+      }
+
+      .ment-container .ment2 {
+        margin-bottom: 62px;
+      }
+
+      .ment-container .ment2 img {
+        position: absolute;
+        width: 100%;
+        top: 7px;
+        left: 0;
+      }
+
+      .ment-container .ment2 p {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      .ment-container .ment2 p>strong {
+        font-size: 16px;
+      }
+
+      .input-container {
+        font-size: 14px;
+        line-height: 45px;
+        margin-bottom: 49px;
+      }
+
+      .input-container .input {
+        width: 156px;
+        height: 37px;
+        padding: 12px 35px;
+        font-size: 14px;
+      }
+
+      .hours-btn-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 64px;
+      }
+
+      .hours-btn-container .hours-btn {
+        font-size: 14px;
+        padding: 19px 36.5px;
+        border-radius: 13px;
+      }
+
+      .hours-btn-container img {
+        position: relative;
+        width: 43px;
+        height: 48px;
+        top: 17px;
+        left: 5px;
+      }
+
+      .answer-container {
+        font-size: 14px;
+        margin-bottom: 55px;
+      }
+
+      .answer-container strong {
+        font-size: 24px;
+      }
+
+      .result-btn-container {
+        margin-bottom: 83px;
+      }
+
+      .result-btn-container a {
+        border-radius: 56px;
+        padding: 13.5px 17.5px;
+        font-size: 14px;
+      }
+
+      .result-btn-container .go-train-btn {
+        margin-right: 13px;
+      }
+
+      .copyright-container {
+        font-size: 9px;
+        line-height: 13.05px;
+      }
+
+      .copyright-container>img {
+        margin-bottom: 17px;
+        width: 91px;
+        height: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="title-container">
+      <img src="./img/clock.png" class="title-clock" alt="시계">
+      <img src="./img/title.png" class="title-text" alt="1만시간의법칙">
+    </section>
+
+    <section class="ment-container">
+      <p class="ment1">"연습은 어제의 당신보다 당신을 더 낫게 만든다."</p>
+      <div class="ment2">
+        <img src="./img/quotes.png" class="quote_img" alt="따옴표">
+        <p><strong>1만 시간의 법칙</strong> 은</p>
+        <p>어떤 분야의 전문가가 되기 위해서는</p>
+        <p>최소한 1만 시간의 훈련이 필요하다는 법칙이다.</p>
+      </div>
+    </section>
+
+    <section class="input-container">
+      <p>나는 <input class="input" type="text" placeholder="예)프로그래밍"> 전문가가 될 것이다.</p>
+      <p>그래서 앞으로 매일 하루에 <input class="input" type="text" placeholder="예)5"> 시간씩 훈련할 것이다.</p>
+    </section>
+
+    <section class="hours-btn-container">
+      <a class="hours-btn" href="#none">나는 며칠 동안 훈련을 해야 1만 시간이 될까?</a>
+      <img src="./img/click.png" alt="클릭">
+    </section>
+
+    <section class="answer-container">
+      <p>당신은 <strong class="job-name">프로그래밍</strong> 전문가가 되기 위해서</p>
+      <p>대략 <strong class="spend-days">5110</strong> 일 이상 훈련하셔야 합니다! :)</p>
+    </section>
+
+
+    <section class="result-btn-container">
+      <a class="go-train-btn" href="#none">훈련하러 가기 GO!GO!</a>
+      <a class="share-btn" href="#none">공유하기</a>
+    </section>
+
+
+    <section class="copyright-container">
+      <img src="./img/logo.png" alt="위니브로고">
+      <div class="copyrignt-text-container">
+        <p>※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.</p>
+        <p>수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</p>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미디어 쿼리</title>
+  <style>
+    body {
+      background-color: tomato;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      box-sizing: border-box;
+      border: solid 10px black;
+      height: 500px;
+      width: 100%;
+      background-color: lightgreen;
+    }
+
+    .item {
+      margin: 50px;
+      width: 500px;
+      background-color: cadetblue;
+    }
+
+    @media screen and (max-width:1000px) {
+      body {
+        background-color: green;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        box-sizing: border-box;
+        border: solid 10px black;
+        height: 800px;
+        width: 100%;
+        background-color: lightgreen;
+      }
+
+      .item {
+        margin: 50px;
+        width: 800px;
+        background-color: cadetblue;
+      }
+    }
+
+    @media screen and (max-width:600px) {
+      body {
+        background-color: pink;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate maiores magni voluptatem iure, doloremque quas
+      fugit temporibus hic facilis corporis eum, nulla aliquam totam! Labore, cumque. Officiis animi molestiae ea?
+    </div>
+    <div class="item">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate maiores magni voluptatem iure, doloremque quas
+      fugit temporibus hic facilis corporis eum, nulla aliquam totam! Labore, cumque. Officiis animi molestiae ea?
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perspective 카드 돌리기</title>
+    <style>
+      @keyframes 돌려 {
+        from {
+          transform: rotateY(0);
+        }
+        to {
+          transform: rotateX(-360deg);
+        }
+      }
+
+      .원본 {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: solid 1px black;
+        perspective: 400px;
+        margin: 100px auto;
+        transform-style: preserve-3d;
+      }
+
+      .회전패널 {
+        transform-origin: top;
+        position: absolute;
+        font-size: 32px;
+        width: 200px;
+        height: 200px;
+        animation: 돌려 5s infinite;
+        transform-style: preserve-3d;
+
+      }
+
+      .앞면 {
+        position: absolute;
+        /* top: 0;
+        left: 0; */
+        width: 100%;
+        height: 100%;
+        background-color: cornflowerblue;
+        backface-visibility: hidden;
+      }
+
+      .뒷면 {
+        position: absolute;
+        /* top: 0;
+        left: 0; */
+        width: 100%;
+        height: 100%;
+        background-color: darkolivegreen;
+        transform: rotateY(180deg);
+      }
+      
+    </style>
+</head>
+<body>
+    <div class="원본">
+      <div class="회전패널">
+        <div class="앞면">앞</div>
+        <div class="뒷면">뒤</div>
+      </div>
+    </div>
+</body>
+</html>
