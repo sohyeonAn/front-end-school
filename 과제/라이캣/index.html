@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>라이캣 그리기</title>
+  <style>
+    /* animaion */
+    @keyframes move-face {
+      0% {
+        transform: scale(0.6);
+      }
+
+      25% {
+        transform: scale(1) rotate(15deg);
+      }
+
+      50% {
+        transform: scale(0.6) rotate(0deg);
+      }
+
+      75% {
+        transform: scale(1) rotate(-15deg);
+      }
+
+      100% {
+        transform: scale(0.6) rotate(0deg);
+      }
+    }
+
+    @keyframes move-ear-left {
+      from {
+        transform: rotate(-10deg);
+      }
+
+      to {
+        transform: rotate(-20deg) translateX(-10px);
+      }
+    }
+
+    @keyframes move-ear-right {
+      from {
+        transform: rotate(10deg);
+      }
+
+      to {
+        transform: rotate(20deg) translateX(10px);
+      }
+    }
+
+
+    @keyframes move-mouth {
+      from {
+        transform: scale(0.5);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+
+    @keyframes move-blush {
+      from {
+        transform: scale(0.6);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+    body {
+      background-color: #663399;
+    }
+
+    .licat {
+      position: relative;
+      margin: 100px auto;
+      width: 500px;
+      height: 500px;
+
+      animation: move-face 2.5s infinite alternate;
+    }
+
+    .ear-left,
+    .ear-right {
+      position: absolute;
+      background-color: #ECD376;
+      width: 50px;
+      height: 70px;
+      top: 90px;
+      border: 10px solid black;
+    }
+
+    .ear-left {
+      left: 100px;
+      border-radius: 45% 65% 50% 35%;
+      transform: rotate(-20deg);
+      animation: move-ear-left .5s infinite alternate;
+
+    }
+
+    .ear-right {
+      right: 80px;
+      border-radius: 65% 45% 35% 50%;
+      transform: rotate(20deg);
+      animation: move-ear-right .5s infinite alternate;
+
+    }
+
+    .ear-left-line,
+    .ear-right-line {
+      position: absolute;
+      background-color: #000;
+      width: 5px;
+      height: 30px;
+      top: 15px;
+    }
+
+    .ear-left-line {
+      left: 25px;
+      transform: rotate(-20deg);
+      border-radius: 60% 0 0 10%;
+    }
+
+    .ear-right-line {
+      right: 25px;
+      transform: rotate(20deg);
+      border-radius: 0 60% 0 10%;
+    }
+
+    .face {
+      position: absolute;
+      top: 100px;
+      left: 70px;
+      background-color: #ECD376;
+      width: 360px;
+      height: 300px;
+      border-radius: 50%;
+      border: 10px solid black;
+    }
+
+    .eye-left,
+    .eye-right {
+      background-color: #000;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      top: 110px;
+    }
+
+    .eye-left {
+      left: 130px;
+    }
+
+    .eye-right {
+      right: 130px;
+    }
+
+    .nose {
+      background-color: #000;
+      position: absolute;
+      width: 35px;
+      height: 25px;
+      border-radius: 90% 90% 100% 100%;
+      top: 150px;
+      left: 165px;
+      z-index: 30;
+    }
+
+    .blind {
+      background-color: #ECD376;
+      position: absolute;
+      width: 115px;
+      height: 27px;
+      top: 135px;
+      left: 125px;
+      z-index: 20;
+    }
+
+    .nose-left-line,
+    .nose-right-line {
+      background-color: #ECD376;
+      border: 10px solid #000;
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      top: 135px;
+      z-index: 10;
+    }
+
+    .nose-left-line {
+      left: 130px;
+    }
+
+    .nose-right-line {
+      right: 130px;
+    }
+
+    .mouth {
+      position: absolute;
+      top: 140px;
+      left: 155px;
+      background-color: #C94F53;
+      width: 30px;
+      height: 50px;
+      border-radius: 50%;
+      border: 10px solid #000;
+
+      animation: move-mouth .4s infinite alternate;
+    }
+
+    .blush-left,
+    .blush-right {
+      position: absolute;
+      top: 140px;
+      background-color: #CE705F;
+      width: 50px;
+      height: 30px;
+      border-radius: 50%;
+
+      animation: move-blush .5s infinite alternate;
+    }
+
+    .blush-left {
+      left: 70px;
+    }
+
+    .blush-right {
+      right: 70px;
+    }
+
+    .chin-left-line1,
+    .chin-left-line2,
+    .chin-right-line1,
+    .chin-right-line2 {
+      position: absolute;
+      top: 140px;
+      background-color: #000;
+      width: 55px;
+      height: 10px;
+      border-radius: 20% 30% 30% 20%;
+    }
+
+    .chin-left-line1 {
+      top: 170px;
+      left: 0;
+      transform: rotate(-30deg);
+    }
+
+    .chin-left-line2 {
+      top: 210px;
+      left: 15px;
+      transform: rotate(-30deg);
+
+    }
+
+    .chin-right-line1 {
+      top: 170px;
+      right: 0;
+      transform: rotate(30deg);
+
+    }
+
+    .chin-right-line2 {
+      top: 210px;
+      right: 15px;
+      transform: rotate(30deg);
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="licat">
+    <div class="ear-left">
+      <div class="ear-left-line"></div>
+    </div>
+    <div class="ear-right">
+      <div class="ear-right-line"></div>
+    </div>
+    <div class="face">
+      <div class="eye-left"></div>
+      <div class="eye-right"></div>
+      <div class="nose"></div>
+      <div class="blind"></div>
+      <div class="nose-left-line"></div>
+      <div class="nose-right-line"></div>
+      <div class="mouth"></div>
+      <div class="blush-left"></div>
+      <div class="blush-right"></div>
+      <div class="chin-left-line1"></div>
+      <div class="chin-left-line2"></div>
+      <div class="chin-right-line1"></div>
+      <div class="chin-right-line2"></div>
+    </div>
+  </div>
+</body>
+
+</html>
