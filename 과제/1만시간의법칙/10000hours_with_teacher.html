@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/10000hours.css">
+  <title>1만 시간의 법칙 with 강사님</title>
+  <style>
+    #app {
+      font-family: GmarketSansMedium;
+      background-color: #5b2386;
+      color: white;
+      text-align: center;
+      padding-bottom : 70px;
+    }
+
+    .tit-law {
+      display: inline-block;
+      position: relative;
+      margin-top: 194px;
+    }
+    .tit-law::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 225px;
+      height: 225px;
+      margin: -112px 0 0 -112px;
+      background-image: url(./img/clock.png);
+      background-size: 225px;
+    }
+
+    .tit-law .img-tit {
+      position: relative;
+      z-index: 10;
+    }
+
+    .img-txt {
+      max-width: 486px;
+      margin: 125px auto 78px;
+    }
+
+    .txt-desc {
+      position: relative;
+      width: 475px;
+      margin: 0 auto 102px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .txt-desc .tit-desc {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .txt-desc::before,
+    .txt-desc::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 37px;
+      height: 32px;
+      margin-top: -16px;
+    }
+    .txt-desc::before {
+      left: 0;
+      background-image: url(./img/txt-left.png);
+    }
+    .txt-desc::after {
+      right: 0;
+      background-image: url(./img/txt-right.png);
+    }
+
+    .cont-inp, .cont-result {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    .cont-inp .txt-wannabe {
+      margin-bottom: 27px;
+    }
+
+    .cont-inp .txt-time {
+      margin-bottom: 102px;
+    }
+
+    .cont-inp .txt-wannabe input,
+    .cont-inp .txt-time input {
+      width: 228px;
+      height: 57px;
+      border: none;
+      border-radius: 7px;
+      text-align: center;
+      font-size: 24px;
+    } 
+
+    .cont-inp .btn-exc,
+    .cont-result .btn-go,
+    .cont-result .btn-share {
+      position: relative;
+      padding: 21px 49px;
+      margin-bottom: 147px;
+      font-family: GmarketSansBold;
+      font-size: 24px;
+      line-height: 24px;
+      background-color: #FCEE21;
+      color: #5b2386;
+      border: none;
+      border-radius: 56px;
+      cursor: pointer;
+    }
+
+    .cont-inp .btn-exc::after {
+      display: block;
+      content: "";
+      background-image: url(./img/click.png);
+      width: 64px;
+      height: 72px;
+      position: absolute;
+      top: 10px;
+      right: -70px;
+    }
+
+    .cont-result .txt-wannabe,
+    .cont-result .txt-time {
+      line-height: 72px;
+    }
+    .cont-result .txt-wannabe{
+      margin-bottom: 17px;
+    }
+    .cont-result .txt-time {
+      margin-bottom: 127px;
+    }
+    .cont-result .txt-wannabe strong,
+    .cont-result .txt-time strong{
+      font-size: 72px;
+      font-family: GmarketSansBold;
+      vertical-align: top;
+    }
+
+    .cont-result .btn-share {
+      margin-left: 18px;
+      background-color: #fff;
+    }
+
+    .cont-footer {
+      font-family: Noto Sans KR;
+      font-size: 12px;
+      line-height: 17px;
+    }
+
+    .cont-footer .img-footer {
+      width: 125px;
+      height: 25px;
+      margin: 0 auto 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <main id="app">
+    <h1 class="tit-law">
+      <img class="img-tit" src="./img/title.png" alt="1만 시간의 법칙">
+    </h1>
+    <img class="img-txt" src="./img/txt_subtitle.png" alt="연습은 어제의 당신보다 당신을 더 낫게 만든다.">
+
+    <p class="txt-desc">
+      <strong class="tit-desc">1만 시간의 법칙</strong>은<br>
+      어떤 분야의 전문가가 되기 위해서는<br>
+      최소한 1만 시간의 훈련이 필요하다는 법칙이다.
+    </p>
+    <form class="cont-inp">
+      <p class="txt-wannabe">
+        나는 <input type="text" placeholder="예)프로그래밍" required> 전문가가 될 것 이다.
+      </p>
+      <p class="txt-time">
+        그래서 앞으로 매일 하루에 <input type="number" min="0" max="24" placeholder="예)5" required> 시간씩 훈련을 할 것이다.
+      </p>
+      <button class="btn-exc">나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button>
+    </form>
+
+    <section class="cont-result">
+      <h2 class="blind">결과 확인</h2>
+      <p class="txt-wannabe">당신은 <strong>프로그래밍</strong> 전문가가 되기 위해서</p>
+      <p class="txt-time">대략 <strong>1000</strong> 일 이상 훈련하셔야 됩니다.</p>
+      <button type="button" class="btn-go">훈련하러가기 GO!GO!</button>
+      <button type="button" class="btn-share">공유하기</button>
+    </section>
+
+    <footer class="cont-footer">
+      <img src="./img/logo.png" alt="weniv" class="img-footer">
+      <p class="txt-footer">&#8251; 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.</p>
+      <p class="txt-footer">수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</p>
+    </footer>
+
+  </main>
+</body>
+
+</html>
