@@ -14,7 +14,7 @@
       background-color: #5b2386;
       color: white;
       text-align: center;
-      padding-bottom : 70px;
+      padding-bottom: 70px;
     }
 
     .tit-law {
@@ -22,35 +22,38 @@
       position: relative;
       margin-top: 194px;
     }
-    .tit-law::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 225px;
-      height: 225px;
-      margin: -112px 0 0 -112px;
-      background-image: url(./img/clock.png);
-      background-size: 225px;
-    }
+
 
     .tit-law .img-tit {
       position: relative;
       z-index: 10;
     }
 
+
+    .tit-law::after {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 225px;
+      height: 225px;
+      margin: -112px 0 0 -112px;
+      background-image: url("./img/clock.png");
+      background-position: center;
+    }
+
     .img-txt {
       max-width: 486px;
-      margin: 125px auto 78px;
+      margin: 125px auto 84px;
     }
 
     .txt-desc {
       position: relative;
-      width: 475px;
-      margin: 0 auto 102px;
+      max-width: 475px;
+      margin: 0 auto 96px;
+      line-height: 30px;
       font-size: 18px;
-      line-height: 24px;
     }
 
     .txt-desc .tit-desc {
@@ -60,91 +63,112 @@
 
     .txt-desc::before,
     .txt-desc::after {
-      display: block;
-      content: "";
       position: absolute;
       top: 50%;
+      display: block;
+      content: '';
       width: 37px;
       height: 32px;
       margin-top: -16px;
     }
+
     .txt-desc::before {
       left: 0;
-      background-image: url(./img/txt-left.png);
-    }
-    .txt-desc::after {
-      right: 0;
-      background-image: url(./img/txt-right.png);
+      background-image: url("./img/txt-left.png");
     }
 
-    .cont-inp, .cont-result {
+    .txt-desc::after {
+      right: 0;
+      background-image: url("./img/txt-right.png");
+    }
+
+    .cont-inp,
+    .cont-result {
       font-size: 24px;
       line-height: 24px;
     }
 
     .cont-inp .txt-wannabe {
-      margin-bottom: 27px;
+      margin-bottom: 30px;
     }
 
     .cont-inp .txt-time {
-      margin-bottom: 102px;
+      margin-bottom: 116px;
     }
 
     .cont-inp .txt-wannabe input,
     .cont-inp .txt-time input {
-      width: 228px;
-      height: 57px;
+      width: 224px;
+      height: 53px;
+      margin: 0 10px;
       border: none;
       border-radius: 7px;
       text-align: center;
       font-size: 24px;
-    } 
+      vertical-align: 4px;
+    }
+
 
     .cont-inp .btn-exc,
-    .cont-result .btn-go,
-    .cont-result .btn-share {
-      position: relative;
+    .btn-go,
+    .btn-share {
       padding: 21px 49px;
-      margin-bottom: 147px;
-      font-family: GmarketSansBold;
+      margin-bottom: 150px;
       font-size: 24px;
       line-height: 24px;
+      font-family: GmarketSansBold;
+      color: #5B2386;
       background-color: #FCEE21;
-      color: #5b2386;
-      border: none;
       border-radius: 56px;
       cursor: pointer;
+      border: none;
+    }
+
+    .btn-go,
+    .btn-share {
+      margin-bottom: 0;
+    }
+
+    .cont-inp .btn-exc {
+      position: relative;
     }
 
     .cont-inp .btn-exc::after {
       display: block;
-      content: "";
-      background-image: url(./img/click.png);
+      position: absolute;
+      right: -72px;
+      bottom: -20px;
+      content: '';
       width: 64px;
       height: 72px;
-      position: absolute;
-      top: 10px;
-      right: -70px;
+      background-image: url("./img/click.png");
     }
 
     .cont-result .txt-wannabe,
     .cont-result .txt-time {
-      line-height: 72px;
+      line-height: 68px;
     }
-    .cont-result .txt-wannabe{
-      margin-bottom: 17px;
+
+    .cont-result {
+      margin-bottom: 130px;
     }
+
+    .cont-result .txt-wannabe {
+      margin-bottom: 22px;
+    }
+
     .cont-result .txt-time {
       margin-bottom: 127px;
     }
+
     .cont-result .txt-wannabe strong,
-    .cont-result .txt-time strong{
+    .cont-result .txt-time strong {
       font-size: 72px;
-      font-family: GmarketSansBold;
       vertical-align: top;
+      font-family: GmarketSansBold;
     }
 
-    .cont-result .btn-share {
+    .btn-share {
       margin-left: 18px;
       background-color: #fff;
     }
@@ -161,45 +185,167 @@
       margin: 0 auto 20px;
     }
 
+    @media screen and (max-width:360px) {
+      #app {
+        padding: 0 24px 32px;
+      }
+
+      .tit-law {
+        width: 267px;
+        height: 57px;
+        margin-top: 76px;
+      }
+
+      .tit-law::after {
+        width: 106px;
+        height: 106px;
+        margin: -53px 0 0 -53px;
+        background-size: 106px;
+      }
+
+      .img-txt {
+        max-width: 297px
+      }
+
+      .txt-desc {
+        margin-bottom: 62px;
+        font-size: 14px;
+      }
+
+      .txt-desc .tit-desc {
+        font-size: 16px;
+      }
+
+      .txt-desc::before,
+      .txt-desc::after {
+        width: 18px;
+        height: 15px;
+        background-size: 18px 15px;
+      }
+
+      .cont-inp,
+      .cont-result {
+        font-size: 14px;
+        line-height: 14px;
+      }
+
+      .cont-inp .txt-wannabe input,
+      .cont-inp .txt-time input {
+        width: 156px;
+        height: 37px;
+        font-size: 14px;
+        margin: 0 2px;
+        padding: 0;
+      }
+
+      .cont-inp .txt-wannabe {
+        margin-bottom: 17px;
+      }
+
+      .cont-inp .txt-time input {
+        margin-top: 17px;
+      }
+
+      .cont-inp .btn-exc {
+        width: 280px;
+        padding: 19px 36px;
+        font-size: 17px;
+        line-height: 17px;
+        border-radius: 13px;
+      }
+
+      .cont-inp .btn-exc::after {
+        width: 43px;
+        height: 48px;
+        background-size: 43px 48px;
+        right: -40px;
+        top: 30px;
+      }
+
+      .cont-result .txt-wannabe strong,
+      .cont-result .txt-time strong {
+        font-size: 24px;
+        line-height: 24px;
+        vertical-align: -4px;
+      }
+
+      .cont-result .txt-wannabe,
+      .cont-result .txt-time {
+        line-height: 14px;
+      }
+
+      .cont-inp .btn-exc,
+      .btn-go,
+      .btn-share {
+        font-size: 14px;
+        padding: 12px 17px;
+      }
+
+      .btn-share {
+        margin-left: 14px;
+      }
+
+      .cont-footer .img-footer {
+        width: 91px;
+        height: 18px;
+      }
+
+      .cont-footer {
+        font-size: 9px;
+      }
+
+      .img-txt {
+        margin: 69px auto 62px;
+      }
+
+      .cont-inp .txt-time {
+        margin-bottom: 49px;
+      }
+
+      .cont-inp .btn-exc {
+        margin-bottom: 64px;
+        padding: 12px 54px;
+      }
+
+      .cont-result .txt-time {
+        margin-bottom: 55px;
+      }
+
+      .cont-result {
+        margin-bottom: 83px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <main id="app">
     <h1 class="tit-law">
-      <img class="img-tit" src="./img/title.png" alt="1만 시간의 법칙">
+      <img src="./img/title.png" alt="1만 시간의 법칙" class="img-tit">
     </h1>
-    <img class="img-txt" src="./img/txt_subtitle.png" alt="연습은 어제의 당신보다 당신을 더 낫게 만든다.">
-
+    <img src="./img/txt_subtitle.png" alt="연습은 어제의 당신보다 당신을 더 낫게 만든다." class="img-txt">
     <p class="txt-desc">
       <strong class="tit-desc">1만 시간의 법칙</strong>은<br>
       어떤 분야의 전문가가 되기 위해서는<br>
       최소한 1만 시간의 훈련이 필요하다는 법칙이다.
     </p>
     <form class="cont-inp">
-      <p class="txt-wannabe">
-        나는 <input type="text" placeholder="예)프로그래밍" required> 전문가가 될 것 이다.
-      </p>
-      <p class="txt-time">
-        그래서 앞으로 매일 하루에 <input type="number" min="0" max="24" placeholder="예)5" required> 시간씩 훈련을 할 것이다.
-      </p>
+      <p class="txt-wannabe">나는 <input type="text" placeholder="예)프로그래밍" required> 전문가가 될것이다.</p>
+      <p class="txt-time">그래서 앞으로 매일 하루에 <input type="number" placeholder="예)5시간" required> 시간식 훈련할 것이다.</p>
       <button class="btn-exc">나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button>
     </form>
-
     <section class="cont-result">
       <h2 class="blind">결과 확인</h2>
       <p class="txt-wannabe">당신은 <strong>프로그래밍</strong> 전문가가 되기 위해서</p>
-      <p class="txt-time">대략 <strong>1000</strong> 일 이상 훈련하셔야 됩니다.</p>
+      <p class="txt-time">대략 <strong>1000</strong>일 이상 훈련하셔야 됩니다.</p>
       <button type="button" class="btn-go">훈련하러가기 GO!GO!</button>
       <button type="button" class="btn-share">공유하기</button>
     </section>
-
     <footer class="cont-footer">
       <img src="./img/logo.png" alt="weniv" class="img-footer">
       <p class="txt-footer">&#8251; 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.</p>
       <p class="txt-footer">수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</p>
     </footer>
-
   </main>
 </body>
 
