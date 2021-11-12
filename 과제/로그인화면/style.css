@@ -2,6 +2,11 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 /* setting */
+* {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
 header,
 button,
 input {
@@ -58,6 +63,7 @@ button {
 .intro .txt-intro {
   margin-bottom: 32px;
 }
+
 .intro .btn-login {
   display: block;
   width: 440px;
