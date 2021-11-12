@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- google fontawesome -->
+  <script src="https://kit.fontawesome.com/253ed985ec.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="./style.css">
+  <title>로그인 모달</title>
+
+  <style>
+    /* font */
+    @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+    /* setting */
+    header,
+    button,
+    input {
+      font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    }
+
+    a,
+    button {
+      cursor: pointer;
+    }
+
+    .sr-only {
+      position: absolute;
+      clip: rect(0 0 0 0);
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+    }
+
+    /* style */
+    .cont-main {
+      font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    }
+
+    @media screen and (max-width: 520px) {
+      .cont-main {
+        padding: 0 24px;
+      }
+
+      .cont-header {
+        position: relative;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #C4C4C4;
+      }
+
+      .cont-header h1 {
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 500;
+      }
+
+      .cont-header .btn-close {
+        position: absolute;
+        top: 22px;
+        right: 24px;
+        font-size: 16px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .cont-login .txt-login {
+        padding: 24px 0 0;
+        margin-bottom: 24px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      .cont-login .form-login .inp-id,
+      .cont-login .form-login .inp-pwd,
+      .cont-login .form-login .btn-submit {
+        box-sizing: border-box;
+        display: block;
+        padding: 15px 16px;
+        width: 100%;
+        border: 1px solid #C4C4C4;
+        border-radius: 5px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .cont-login .form-login .inp-id {
+        margin-bottom: 10px;
+      }
+
+      .cont-login .form-login .inp-pwd {
+        margin-bottom: 16px;
+      }
+
+      .cont-login .form-login .label-chk {
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 22px;
+        color: #767676;
+        cursor: pointer;
+      }
+
+      .cont-login .form-login .inp-chk,
+      .cont-login .form-login .inp-chk:checked {
+        display: inline-block;
+        vertical-align: -9px;
+        width: 22px;
+        height: 22px;
+        background-image: url(./images/uncheck.png);
+        background-size: 22px;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+      }
+      .cont-login .form-login .inp-chk:checked{
+        background-image: url(./images/checked.png);
+      }
+
+      .cont-login .form-login .btn-submit {
+        margin-bottom: 20px;
+        color: white;
+        background: #2F80ED;
+        border: none;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 22px;
+      }
+
+      .user-info-link-wrap {
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      .user-info-link-wrap .link-signin,
+      .user-info-link-wrap .link-find-account {
+        color: #767676;
+      }
+
+      .user-info-link-wrap .link-signin::after {
+        display: inline-block;
+        content: "|";
+        width: 1px;
+        height: 12px;
+        margin: 0 14px;
+      }
+
+      .user-info-link-wrap .link-find-account {
+        margin-bottom: 30px;
+      }
+
+      .cont-sns-login fieldset {
+        border-top: 1px solid #C4C4C4;
+      }
+
+      .cont-sns-login legend {
+        margin-bottom: 20px;
+        padding: 0 13px;
+        text-align: center;
+        color: #767676;
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      .cont-sns-login .btn-sns {
+        position: relative;
+        box-sizing: border-box;
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 15px 0;
+        background-color: #fff;
+        color: #767676;
+        border: 1px solid #767676;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .cont-sns-login .btn-sns.btn-google {
+        border-color: #767676;
+      }
+
+      .cont-sns-login .btn-sns.btn-facebook {
+        border-color: #2D9CDB;
+      }
+
+      .cont-sns-login .btn-sns.btn-naver {
+        border-color: #00BF18;
+      }
+
+      .cont-sns-login .btn-sns.btn-kakao {
+        border-color: #F2C94C;
+      }
+
+      .cont-sns-login .btn-sns.btn-google:hover,
+      .cont-sns-login .btn-sns.btn-facebook:hover,
+      .cont-sns-login .btn-sns.btn-naver:hover,
+      .cont-sns-login .btn-sns.btn-kakao:hover {
+        border-width: 4px;
+      }
+
+      .cont-sns-login .btn-sns.btn-google::before,
+      .cont-sns-login .btn-sns.btn-facebook::before,
+      .cont-sns-login .btn-sns.btn-naver::before,
+      .cont-sns-login .btn-sns.btn-kakao::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: 11px;
+        float: left;
+        background-image: url(./images/google_logo.png);
+        width: 28px;
+        height: 28px;
+      }
+
+      .cont-sns-login .btn-sns.btn-facebook::before {
+        width: 26px;
+        height: 26px;
+        background-image: url(./images/facebook_logo.png);
+      }
+
+      .cont-sns-login .btn-sns.btn-naver::before {
+        background-image: url(./images/naver_logo.png);
+      }
+
+      .cont-sns-login .btn-sns.btn-kakao::before {
+        background-image: url(./images/kakao_logo.png);
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="cont-header">
+    <h1>로그인 또는 회원가입</h1>
+    <button type="button" class="btn-close">
+      <img src="./images/close.png" alt="닫기">
+    </button>
+  </header>
+
+  <main class="cont-main">
+    <section class="cont-login">
+      <h2 class="sr-only">위니브 로그인</h2>
+      <p class="txt-login">위니브에서 여러분의 궁금증을 해결하세요! :)</p>
+      <form class="form-login">
+        <label for="id" class="sr-only">아이디</label>
+        <input type="text" id="id" class="inp-id" placeholder="아이디">
+        <label for="pwd" class="sr-only">비밀번호</label>
+        <input type="text" id="pwd" class="inp-pwd" placeholder="비밀번호">
+        <label class="label-chk">
+          <input type="checkbox" class="inp-chk">
+          로그인 상태 유지
+        </label>
+        <button type="submit" class="btn-submit">로그인</button>
+      </form>
+
+      <div class="user-info-link-wrap">
+        <a href="#none" class="link-signin">회원가입</a>
+        <a href="#none" class="link-find-account">아이디 및 비밀번호 찾기</a>
+      </div>
+    </section>
+
+    <footer class="cont-sns-login">
+      <fieldset>
+        <legend>또는</legend>
+        <button type="button" class="btn-sns btn-google">
+          구글 계정으로 로그인
+        </button>
+        <button type="button" class="btn-sns btn-facebook">
+          페이스북 계정으로 로그인
+        </button>
+        <button type="button" class="btn-sns btn-naver">
+          네이버 계정으로 로그인
+        </button>
+        <button type="button" class="btn-sns btn-kakao">
+          카카오 계정으로 로그인
+        </button>
+      </fieldset>
+    </footer>
+  </main>
+
+</body>
+
+</html>

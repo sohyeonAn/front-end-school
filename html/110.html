@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>css 설계 기법</title>
+  <style>
+    /* 구조와 스킨의 분리 */
+    /* .btn {
+      width: 200px;
+      height: 80px;
+      font-size: 30px;
+    }
+
+    .btn-close {
+      background-color: black;
+      color: white;
+      border: 3px dotted #fff;
+    } */
+
+    /* 컨테이너와 콘텐츠 분리 */
+    /* #main .btn {
+      width: 300px;
+      padding: 20px 10px;
+      margin: 10px;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    #main .general {
+      background-color: darkorange;
+      color: white;
+    }
+
+    #main .warning {
+      background-color: darkkhaki;
+    } */
+
+
+    /* SMACSS */
+    /* 1. 베이스 */
+    /* 2. 레이아웃 */
+    /* 3. 모듈 */
+    /* .btn {
+      display: inline-block;
+      width: 300px;
+      padding: 20px 10px;
+      font-size: 18px;
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+      background-color: tomato;
+    }
+
+    .btn.btn-small {
+      width: 100px;
+      font-size: 14px;
+    }
+
+    .btn.btn-long {
+      width: 260px;
+    } */
+
+    /* 4. 스테이트 */
+    /* .tabnav {
+      display: flex;
+    }
+
+    .tabnav li {
+      border-right: 1px solid black;
+    }
+
+    .tabnav li a {
+      display : block;
+      padding: 10px 30px;
+      text-decoration: none;
+    }
+
+    .is-active {
+      background-color: cornflowerblue;
+    }
+
+    .is-active a {
+      pointer-events: none;
+      color: white;
+    } */
+
+    /* 5. 테마 */
+    /* .mod {
+      border: 1px solid;
+    }
+
+    .mod {
+      border-color: blue;
+    } */
+
+    /* BEM block: 형태보다 의미 */
+    /* .green-box{}
+    .error-red{} */
+
+    /* BEM modifier */
+    /* .chater-baseball_active-false{
+
+    } */
+  </style>
+</head>
+
+<body>
+  <!-- <button type="button" class="btn"></button>
+  <button type="button" class="btn btn-close"></button> -->
+
+  <!-- <main id="main">
+    <button type="button" class="btn general">기본버튼</button>
+    <button type="button" class="btn warning">취소버튼</button>
+  </main> -->
+
+<!-- 
+  <a href="" class="btn btn-long">아이디/비밀번호 찾기</a>
+  <a href="" class="btn btn-small">로그인</a> -->
+
+  
+  <!-- 
+  <ul class="tabnav">
+    <li class="is-active"><a href="">탭1</a></li>
+    <li><a href="">탭2</a></li>
+    <li><a href="">탭3</a></li>
+    <li><a href="">탭4</a></li>
+  </ul> -->
+
+  <!-- BEM Element 명명 -->
+  <!-- <ul class="tabnav">
+    <li class="tabnav__item"><a class="tabnav__link" href="">탭1</a></li>
+    <li><a href="">탭2</a></li>
+    <li><a href="">탭3</a></li>
+    <li><a href="">탭4</a></li>
+  </ul> -->
+  
+  <section class="chapter-baseball">
+    <button type="button" class="chapter-baseball__btn
+    chater-baseball_active-false"></button>
+  </section>
+
+</body>
+
+</html>
