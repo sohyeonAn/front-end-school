@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <title>flex</title>
+    <style>
+      .container-color {
+        background-color: tomato;
+        border: 5px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        /* width: 600px; */
+        /* height: 200px; */
+        padding: 30px;
+      }
+
+      .item-color {
+        background-color: darkcyan;
+        border: 5px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 5px;
+      }
+
+      .container1 {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .item {
+        flex-grow: 1;
+      }
+
+      .item:nth-child(1){
+        flex-basis: 500px;
+        /* 크기가 줄어들 때 누가 먼저 크기를 줄이나 */
+        /* 0이면 크기에 대한 양보를 하지 않음.(=줄어들지 않는다.) */
+        flex-shrink: 2;
+      }
+      .item:nth-child(2){
+        flex-basis: 500px;
+        flex-shrink: 1;
+      }
+    </style>
+</head>
+<body>
+    flex-grow 실습
+    <div class="container-color container1">
+      <div class="item-color item">Lorem.</div>
+      <div class="item-color item">Lorem, ipsum.</div>
+      <div class="item-color item">Lorem, ipsum dolor.</div>
+      <div class="item-color item">Lorem ipsum dolor sit.</div>
+    </div>
+</body>
+</html>

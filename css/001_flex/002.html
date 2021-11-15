@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <title>flex</title>
+    <style>
+      .container-color {
+        background-color: tomato;
+        border: 5px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        height: 500px;
+        padding: 30px;
+      }
+
+      .item-color {
+        background-color: darkcyan;
+        border: 5px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 5px;
+      }
+
+      .container1 {
+        display: flex;
+        flex-direction: column;
+        /* flex-direction: row; */
+      }
+
+      .item:nth-child(2){
+        /* width를 조절할 경우 ui가 깨짐 */
+        /* width: 400px; */
+        flex-basis: 300px;
+      }
+    </style>
+</head>
+<body>
+    flex-basis 실습
+    <div class="container-color container1">
+      <div class="item-color item">Lorem.</div>
+      <div class="item-color item">Lorem, ipsum.</div>
+      <div class="item-color item">Lorem, ipsum dolor.</div>
+      <div class="item-color item">Lorem ipsum dolor sit amet consectetur.</div>
+    </div>
+
+
+    <pre>
+      /* Keyword values */
+      flex: auto;
+      flex: initial;
+      flex: none;
+
+      /* One value, unitless number: flex-grow */
+      flex: 2;
+
+      /* One value, length or percentage: flex-basis */
+      flex: 10em;
+      flex: 30%;
+
+      /* Two values: flex-grow | flex-basis */
+      flex: 1 30px;
+
+      /* Two values: flex-grow | flex-shrink */
+      flex: 2 2;
+
+      /* Three values: flex-grow | flex-shrink | flex-basis */
+      flex: 2 2 10%;
+
+      /* Global values */
+      flex: inherit;
+      flex: initial;
+      flex: unset;
+  </pre>
+</body>
+</html>

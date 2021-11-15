@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>card_2</title>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      border: solid 3px black;
+      border-radius: 10px;
+      margin: 5px;
+      padding: 5px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      border: solid 3px black;
+      border-radius: 10px;
+      margin: 5px;
+      padding: 5px;
+    }
+
+    .item-desc {
+      flex: auto;
+      background-color: cornsilk;
+      padding: 10px;
+    }
+
+    @media screen and (max-width: 1330px){
+      .item {
+        width: 500px;
+      }
+    }
+
+    @media screen and (max-width: 1110px){
+      .item {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="container">
+    <li class="item">
+      <img src="/images/a.jpg" alt="섭지코지 이미지 입니다." class="item-img">
+      <p class="item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ratione officiis sequi ea
+        veritatis quod dignissimos minus. Minus vel amet est sapiente animi assumenda, earum vitae ipsam porro harum.
+        Facilis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore provident tempora quod unde facilis
+        autem nulla repellendus, reprehenderit porro soluta error libero quia sapiente itaque vel aut voluptatum
+        molestiae voluptatem.</p>
+    </li>
+    <li class="item">
+      <img src="/images/a.jpg" alt="섭지코지 이미지 입니다." class="item-img">
+      <p class="item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ratione officiis sequi ea
+        veritatis quod dignissimos minus. Minus vel amet est sapiente animi assumenda, earum vitae ipsam porro harum.
+        Facilis.</p>
+    </li>
+    <li class="item">
+      <img src="/images/a.jpg" alt="섭지코지 이미지 입니다." class="item-img">
+      <p class="item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ratione officiis sequi ea
+        veritatis quod dignissimos minus. Minus vel amet est sapiente animi assumenda, earum vitae ipsam porro harum.
+        Facilis.</p>
+    </li>
+    <li class="item">
+      <img src="/images/a.jpg" alt="섭지코지 이미지 입니다." class="item-img">
+      <p class="item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ratione officiis sequi ea
+        veritatis quod dignissimos minus. Minus vel amet est sapiente animi assumenda, earum vitae ipsam porro harum.
+        Facilis.</p>
+    </li>
+  </ul>
+</body>
+
+</html>

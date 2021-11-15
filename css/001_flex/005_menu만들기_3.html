@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <title>메뉴</title>
+    <style>
+      .container-color {
+        background-color: tomato;
+        border: 3px solid black;
+        height: 75px;
+        padding: 5px;
+      }
+
+      .item-color {
+        background-color: lightgoldenrodyellow;
+        /* border: 3px solid black; */
+        border-radius: 10px;
+        margin: 10px;
+        padding: 5px;
+      }
+
+      .container {
+        display: flex;
+      }
+
+      
+      .item {
+        width: 100px;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        transition: all .5s;
+      }
+      
+      .logo {
+        width: 100px;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        transition: all .5s;
+        margin-right: auto;
+      }
+
+
+      .item:hover {
+        width: 140px;
+        background-color: mediumaquamarine;
+        color: white;
+      }
+
+      
+    </style>
+</head>
+<body>
+    <ul class="container-color container">
+      <li class="item-color logo">LOGO</li>
+      <li class="item-color item">ABOUT ME</li>
+      <li class="item-color item">SKILL</li>
+      <li class="item-color item">PORTFOLIO</li>
+      <li class="item-color item">CONTACT</li>
+    </ul>
+</body>
+</html>

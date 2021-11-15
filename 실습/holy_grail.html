@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>Holy grail</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 5px;
+      border: 2px solid black;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .header {
+      box-sizing: border-box;
+      border: 2px solid red;
+      width: 100%;
+      height: 100px;
+    }
+
+    .header .cont-menu {
+      display: flex;
+    }
+
+    .header .logo {
+      margin-right: auto;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .header .menu-item {
+      padding: 10px;
+    }
+
+    .cont-main {
+      border: 2px solid red;
+      width: 80%;
+      padding: 10px;
+    }
+
+    .cont-articles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+    }
+
+    .article {
+      width: 30%;
+      margin: 10px;
+      border: 2px solid green;
+    }
+
+    .article .article-img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .aside-right {
+      border: 2px solid red;
+      width: 20%;
+      padding: 10px;
+    }
+
+    .footer {
+      border: 2px solid red;
+      width: 100%;
+      height: 100px;
+    }
+
+
+    @media screen and (max-width: 800px) {
+      .cont-main {
+        width: 100%;
+      }
+
+      .article {
+        width: 40%;
+      }
+
+      .aside-right {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      .article {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h2>HEADER</h2>
+    <ul class="cont-menu">
+      <li class="menu-item logo">
+        <a href="#">HOME</a>
+      </li>
+      <li class="menu-item"><a href="">menu1</a></li>
+      <li class="menu-item"><a href="">menu2</a></li>
+      <li class="menu-item"><a href="">menu3</a></li>
+      <li class="menu-item"><a href="">menu4</a></li>
+    </ul>
+  </header>
+
+  <section class="cont-main">
+    <h2>SECTION</h2>
+    <section class="cont-articles">
+      <article class="article">
+        <h3>TITLE</h3>
+        <img src="/images/a.jpg" alt="섭지코지이미지입니다." class="article-img">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, nihil pariatur, praesentium corrupti
+          atque labore hic, culpa molestias alias vero ut. Vel quisquam suscipit, asperiores laboriosam inventore quas
+          reiciendis dolore.
+          Consequatur esse nobis minus deleniti repellat autem at illum, asperiores dicta eveniet ipsa vel accusamus
+          quisquam tenetur rerum! Quos pariatur saepe debitis, eligendi veritatis officia animi ratione similique
+          nesciunt
+          fuga?
+          Provident fugiat incidunt culpa commodi iste asperiores neque perferendis hic? Cupiditate culpa accusantium
+          excepturi error maxime incidunt sint maiores, deserunt recusandae fugit, ad pariatur a laudantium similique
+          doloremque, quod fuga.</p>
+      </article>
+      <article class="article">
+        <h3>TITLE</h3>
+        <img src="/images/a.jpg" alt="섭지코지이미지입니다." class="article-img">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, nihil pariatur, praesentium corrupti
+          atque labore hic, culpa molestias alias vero ut. Vel quisquam suscipit, asperiores laboriosam inventore quas
+          reiciendis dolore.
+          Consequatur esse nobis minus deleniti repellat autem at illum, asperiores dicta eveniet ipsa vel accusamus
+          quisquam tenetur rerum! Quos pariatur saepe debitis, eligendi veritatis officia animi ratione similique
+          nesciunt
+          fuga?
+          Provident fugiat incidunt culpa commodi iste asperiores neque perferendis hic? Cupiditate culpa accusantium
+          excepturi error maxime incidunt sint maiores, deserunt recusandae fugit, ad pariatur a laudantium similique
+          doloremque, quod fuga.</p>
+      </article>
+      <article class="article">
+        <h3>TITLE</h3>
+        <img src="/images/a.jpg" alt="섭지코지이미지입니다." class="article-img">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, nihil pariatur, praesentium corrupti
+          atque labore hic, culpa molestias alias vero ut. Vel quisquam suscipit, asperiores laboriosam inventore quas
+          reiciendis dolore.
+          Consequatur esse nobis minus deleniti repellat autem at illum, asperiores dicta eveniet ipsa vel accusamus
+          quisquam tenetur rerum! Quos pariatur saepe debitis, eligendi veritatis officia animi ratione similique
+          nesciunt
+          fuga?
+          Provident fugiat incidunt culpa commodi iste asperiores neque perferendis hic? Cupiditate culpa accusantium
+          excepturi error maxime incidunt sint maiores, deserunt recusandae fugit, ad pariatur a laudantium similique
+          doloremque, quod fuga.</p>
+      </article>
+    </section>
+  </section>
+
+  <aside class="aside-right">
+    <h2>ASIDE</h2>
+    <p>Lorem.</p>
+    <p>Lorem.</p>
+    <p>Lorem.</p>
+    <p>Lorem.</p>
+  </aside>
+
+  <footer class="footer">
+    <h2>FOOTER</h2>
+  </footer>
+</body>
+
+</html>

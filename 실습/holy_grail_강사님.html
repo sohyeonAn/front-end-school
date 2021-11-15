@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>holy grail layout with 강사님</title>
+  <style>
+    /* reset */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* util */
+    .sr-only {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .cont:nth-child(1){
+      border: 5px solid yellow;
+      width: 100%;
+    }
+    .cont:nth-child(2){
+      border: 5px solid blue;
+      width: 70%;
+    }
+    .cont:nth-child(3){
+      border: 5px solid darkcyan;
+      width: 30%;
+    }
+
+    .cont:nth-child(4){
+      border: 5px solid greenyellow;
+      width: 100%;
+    }
+    
+    @media screen and (max-width: 800px){
+    .cont:nth-child(2){
+      border: 5px solid blue;
+      width: 100%;
+    }
+    .cont:nth-child(3){
+      border: 5px solid darkcyan;
+      width: 100%;
+    }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="cont">
+    <h1 class="sr-only">제목1</h1>
+    <nav>
+      <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+      </ul>
+    </nav>
+  </header>
+  <section class="cont">
+    <h2 class="sr-only">제목2</h2>
+    <article>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum sed id minus. Exercitationem quas error inventore
+      amet iure incidunt tempora, provident illo assumenda voluptas, architecto blanditiis quam ullam non vel?
+      Minima provident, vero id aut iste cum voluptates iure rerum consequatur, obcaecati ad ratione amet, distinctio
+      aliquid. Minus molestias, sequi qui quod quo soluta repellat cum ad, illum pariatur expedita!
+    </article>
+  </section>
+  <aside class="cont"> 
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum quaerat in, officia cumque facere alias praesentium dolores dignissimos labore molestiae impedit aperiam nihil voluptate adipisci incidunt laboriosam quas sit! Cum.
+  </aside>
+  <footer class="cont">
+    FOOTER
+  </footer>
+</body>
+
+</html>
