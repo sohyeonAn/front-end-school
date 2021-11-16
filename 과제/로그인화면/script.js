@@ -19,6 +19,8 @@ function openLoginModal() {
 }
 
 function closeLoginModal() {
+  inputId.value = '';
+  inputPwd.value = '';
   introBox.classList.remove('hidden');
   loginModal.classList.add('hidden');
 }

@@ -164,7 +164,7 @@ button {
 .cont-login .form-login .inp-chk,
 .cont-login .form-login .inp-chk:checked {
   display: inline-block;
-  vertical-align: -9px;
+  vertical-align: top;
   width: 22px;
   height: 22px;
   background-image: url(./images/uncheck.png);
