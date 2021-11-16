@@ -16,48 +16,63 @@ modalLoginBtn.addEventListener('click', loginValidation);
 function openLoginModal() {
   loginModal.classList.remove('hidden');
   introBox.classList.add('hidden');
+
+  const wrapId = document.querySelector('.id-wrap');
+  const wrapPwd = document.querySelector('.pwd-wrap');
+
+  // 주의 텍스트가 이미 있는 경우 제거함.
+  resetWarningText();
 }
 
 function closeLoginModal() {
   inputId.value = '';
   inputPwd.value = '';
+
   introBox.classList.remove('hidden');
   loginModal.classList.add('hidden');
+}
+
+function resetWarningText() {
+  const wrapId = document.querySelector('.id-wrap');
+  const wrapPwd = document.querySelector('.pwd-wrap');
+
+  if (wrapId.lastChild.className === 'txt-warning') {
+    wrapId.removeChild(wrapId.lastChild);
+  }
+  if (wrapPwd.lastChild.className === 'txt-warning') {
+    wrapPwd.removeChild(wrapPwd.lastChild);
+  }
 }
 
 function loginValidation(e) {
   // submit 자동 리로드 해제
   e.preventDefault();
+
   const wrapId = document.querySelector('.id-wrap');
   const wrapPwd = document.querySelector('.pwd-wrap');
-
-  // 초기 리셋. 이미 주의 텍스트가 있는데 더 추가되지 않도록 함.
-  if(wrapId.lastChild.className === 'txt-warning'){
-    wrapId.removeChild(wrapId.lastChild);
-  }
-  if(wrapPwd.lastChild.className === 'txt-warning'){
-    wrapPwd.removeChild(wrapPwd.lastChild);
-  }
+  
+  // 주의 텍스트가 더 추가되지 않도록 함.
+  resetWarningText();
 
   const warningTxt = document.createElement('p');
   warningTxt.classList.add('txt-warning');
 
-  if(!inputId.value){
+  if (!inputId.value) {
     inputId.focus();
     inputId.classList.add('warning');
-    warningTxt.innerText = '아이디를 입력해 주세요.'; 
+    warningTxt.innerText = '아이디를 입력해 주세요.';
     wrapId.appendChild(warningTxt);
-    return ;
-  }else{
+    return;
+  } else {
     inputId.classList.remove('warning');
   }
-  if(!inputPwd.value){
+  if (!inputPwd.value) {
     inputPwd.focus();
     inputPwd.classList.add('warning');
     warningTxt.innerText = '비밀번호를 입력해 주세요.';
     wrapPwd.appendChild(warningTxt);
-    return ;
-  }else{
+    return;
+  } else {
     inputPwd.classList.remove('warning');
   }
 }
