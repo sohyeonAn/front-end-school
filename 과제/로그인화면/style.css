@@ -161,7 +161,6 @@ button {
 
 .cont-login .form-login .inp-chk,
 .cont-login .form-login .inp-chk:checked {
-  display: inline-block;
   vertical-align: top;
   width: 22px;
   height: 22px;
@@ -213,21 +212,28 @@ button {
 .cont-sns-login {
   padding: 0 24px;
 }
-.cont-sns-login fieldset {
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
+
+
+.cont-sns-login .btn-sns-wrap {
+  position: relative;
   border-top: 1px solid #C4C4C4;
+  padding-top: 30px; 
 }
 
-.cont-sns-login legend {
-  margin-bottom: 20px;
+.cont-sns-login .btn-sns-wrap::after {
+  content: "또는";
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0 13px;
-  text-align: center;
   color: #767676;
+  background-color: #fff;
   font-size: 14px;
   line-height: 18px;
 }
+
 
 .cont-sns-login .btn-sns {
   position: relative;
