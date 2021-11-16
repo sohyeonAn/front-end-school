@@ -83,11 +83,6 @@ button {
   border-radius: 5px;
 }
 
-
-.cont-main {
-  padding: 0 24px;
-}
-
 .cont-header {
   position: relative;
   text-align: center;
@@ -95,7 +90,7 @@ button {
   border-bottom: 1px solid #C4C4C4;
 }
 
-.cont-header h1 {
+.cont-header h3 {
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
@@ -111,6 +106,9 @@ button {
   cursor: pointer;
 }
 
+.cont-login {
+  padding: 0 24px;
+}
 .cont-login .txt-login {
   padding: 24px 0 0;
   margin-bottom: 24px;
@@ -212,6 +210,9 @@ button {
   margin-bottom: 30px;
 }
 
+.cont-sns-login {
+  padding: 0 24px;
+}
 .cont-sns-login fieldset {
   border-left: none;
   border-right: none;

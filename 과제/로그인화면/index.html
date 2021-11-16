@@ -25,61 +25,65 @@
     </section>
 
     <section class="modal-login hidden">
-      <header class="cont-header">
-        <h1>로그인 또는 회원가입</h1>
+      <h2 class="sr-only">위니브 로그인 모달</h2>
+
+      <section class="cont-header">
+        <h3>로그인 또는 회원가입</h3>
         <button type="button" class="btn-close">
-          <img src="./images/close.png" alt="닫기">
+          <img src="./images/close.png" alt="로그인 창 닫기">
         </button>
-      </header>
+      </section>
 
-      <main class="cont-main">
-        <section class="cont-login">
-          <h2 class="sr-only">위니브 로그인</h2>
-          <p class="txt-login">위니브에서 여러분의 궁금증을 해결하세요! :)</p>
-          <form class="form-login">
-            <label for="id" class="sr-only">아이디</label>
-            <div class="id-wrap">
-              <input type="text" id="id" class="inp-id" placeholder="아이디">
-              <!-- 경고 메세지 동적 추가 공간 -->
-            </div>
-            
-            <label for="pwd" class="sr-only">비밀번호</label>
-            <div class="pwd-wrap">
-              <input type="password" id="pwd" class="inp-pwd" placeholder="비밀번호">
-              <!-- 경고 메세지 동적 추가 공간 -->
-            </div>
-            <label class="label-chk">
-              <input type="checkbox" class="inp-chk">
-              로그인 상태 유지
-            </label>
-            <button type="submit" class="btn-login">로그인</button>
-          </form>
-
-          <div class="user-info-link-wrap">
-            <a href="#none" class="link-signin">회원가입</a>
-            <a href="#none" class="link-find-account">아이디/비밀번호 찾기</a>
+      <section class="cont-login">
+        <h3 class="sr-only">위니브 로그인</h3>
+        <p class="txt-login">위니브에서 여러분의 궁금증을 해결하세요! :)</p>
+        <form class="form-login">
+          <label for="id" class="sr-only">아이디</label>
+          <div class="id-wrap">
+            <input type="text" id="id" class="inp-id" placeholder="아이디">
+            <!-- 경고 메세지 동적 추가 공간 -->
           </div>
-        </section>
 
-        <section class="cont-sns-login">
-          <fieldset>
-            <legend>또는</legend>
-            <button type="button" class="btn-sns btn-google">
-              구글 계정으로 로그인
-            </button>
-            <button type="button" class="btn-sns btn-facebook">
-              페이스북 계정으로 로그인
-            </button>
-            <button type="button" class="btn-sns btn-naver">
-              네이버 계정으로 로그인
-            </button>
-            <button type="button" class="btn-sns btn-kakao">
-              카카오 계정으로 로그인
-            </button>
-          </fieldset>
-        </section>
-      </main>
+          <label for="pwd" class="sr-only">비밀번호</label>
+          <div class="pwd-wrap">
+            <input type="password" id="pwd" class="inp-pwd" placeholder="비밀번호">
+            <!-- 경고 메세지 동적 추가 공간 -->
+          </div>
+          <label class="label-chk">
+            <input type="checkbox" class="inp-chk">
+            로그인 상태 유지
+          </label>
+          <button type="submit" class="btn-login">로그인</button>
+        </form>
+
+        <div class="user-info-link-wrap">
+          <a href="#none" class="link-signin">회원가입</a>
+          <a href="#none" class="link-find-account">아이디/비밀번호 찾기</a>
+        </div>
+      </section>
+
+      <section class="cont-sns-login">
+        <h3 class="sr-only">위니브 SNS 로그인</h3>
+        <fieldset>
+          <legend>또는</legend>
+          <button type="button" class="btn-sns btn-google">
+            구글 계정으로 로그인
+          </button>
+          <button type="button" class="btn-sns btn-facebook">
+            페이스북 계정으로 로그인
+          </button>
+          <button type="button" class="btn-sns btn-naver">
+            네이버 계정으로 로그인
+          </button>
+          <button type="button" class="btn-sns btn-kakao">
+            카카오 계정으로 로그인
+          </button>
+        </fieldset>
+      </section>
+
     </section>
+
+    
   </section>
 
 
