@@ -1,0 +1,115 @@
+.btn-login {
+  width: 100%;
+  padding: 17px 0 15px;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 28px;
+  color: #fff;
+  background-color: #2f80ed;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-close {
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.module-inp .inp-login {
+  box-sizing: border-box;
+  display: block;
+  padding: 15px 16px;
+  width: 100%;
+  border: 1px solid #C4C4C4;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
+}
+
+.module-inp.module-inp-id.error .inp-login{
+  border: 2px solid #f4492e;
+}
+
+.module-inp .inp-error {
+  display: none;
+  margin: 6px 0 0 4px;
+  color: #f4492e;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.module-inp.error .inp-error {
+  display: block;
+}
+
+.module-inp + .module-inp {
+  margin-top: 10px;
+}
+
+.txt-hide {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.link-sns-login {
+  display: block;
+  padding:15px 0 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #767676;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-indent: -38px;
+}
+
+.link-sns-login::before {
+  display: block;
+  content: "";
+  float: left;
+  background-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+.link-sns-login.icon-google {
+  border-color: #767676;
+}
+
+.link-sns-login.icon-google::before {
+  background-image: url(../../images/google_logo.png);
+}
+
+.link-sns-login.icon-naver {
+  border-color: #00bf18;
+}
+
+.link-sns-login.icon-naver::before {
+  background-image: url(../../images/naver_logo.png);
+}
+.link-sns-login.icon-facebook {
+  border-color: #2d9cdb;
+}
+
+.link-sns-login.icon-facebook::before {
+  background: url(../../images/facebook_logo.png) center no-repeat;
+}
+.link-sns-login.icon-kakao {
+  border-color: #f2c94c;
+}
+
+.link-sns-login.icon-kakao::before {
+  background-image: url(../../images/kakao_logo.png);
+}
