@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>codepen grid clone </title>
+  <style>
+    body {
+      padding: 30px 100px;
+      display: flex;
+    }
+
+    header {
+      font-size: 30px;
+      font-weight: bold;
+      flex: 1;
+    }
+
+
+    .section-board {
+      transform: rotateX(60deg) rotateY(-10deg) rotateZ(50deg);
+      flex: 3;
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-template-rows: repeat(4, 100px);
+      gap: 20px;
+    }
+
+    .board-item {
+      position: relative;
+      background-color: dodgerblue;
+      transition: all .5s;
+    }
+
+    .board-item:hover {
+      cursor: pointer;
+      transform: translateX(10px) translateY(-10px);
+    }
+
+    .board-item::after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      z-index: -1;
+      width: 100px;
+      height: 100px;
+      background-color: #ccc;
+    }
+
+    .board-item:nth-child(3n) {
+      background-color: darkorange;
+    }
+    .board-item:nth-child(3n-1) {
+      background-color: darkseagreen;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    Codepen Clone
+  </header>
+  <section class="section-board">
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+  </section>
+</body>
+
+</html>

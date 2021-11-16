@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>grid 정리</title>
+  <style>
+    .container-color {
+      background-color: tomato;
+      border: 5px solid black;
+      border-radius: 10px;
+    }
+
+    .item-color {
+      background-color: darkcyan;
+      border: 5px solid black;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 5px;
+    }
+
+    .container {
+      display: grid;
+      gap: 10px;
+      grid-template-areas: 'header header header'
+        'section section aside'
+        'footer footer footer';
+    }
+    
+    /*
+        그리드 트랙: 행 또는 열
+        그리드 행 : 한 칸
+        그리드 라인 : 셀 구분 선(1번부터 시작)
+      */
+
+
+    .header {
+      /* 이 방식은 IE는 지원하지 않음. */
+      background-color: darkorchid;
+      grid-area: header;
+    }
+
+    .section {
+      background-color: cadetblue;
+      grid-area: section;
+    }
+
+    .aside {
+      background-color: crimson;
+      grid-area: aside;
+    }
+
+    .footer {
+      background-color: darksalmon;
+      grid-area: footer;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="container-color container">
+    <div class="item-color header">Lorem.</div>
+    <div class="item-color section">Lorem, ipsum.</div>
+    <div class="item-color aside">Lorem, ipsum dolor.</div>
+    <div class="item-color footer">Lorem ipsum dolor sit.</div>
+  </div>
+</body>
+
+</html>

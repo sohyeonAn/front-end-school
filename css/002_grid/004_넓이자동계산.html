@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <title>넓이 자동 게산</title>
+    <style>
+      .container {
+        display: flex;
+      }
+
+      .item:nth-child(1){
+        width: 200px;
+        height: 200px;
+        background-color: darkslateblue;
+      }
+
+      .item:nth-child(2){
+        width: calc(100% -  100px);
+        /* width: calc(80vw -  100px); */
+        /* width: calc(100% - 50%); */
+        min-width: 500px;
+        width: min(300px, 50vw);
+        background-color:chocolate;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+</body>
+</html>

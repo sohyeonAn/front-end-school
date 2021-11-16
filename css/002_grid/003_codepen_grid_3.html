@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>codepen grid clone </title>
+  <style>
+    body {
+      padding: 30px 100px;
+      display: flex;
+    }
+
+    header {
+      flex: 1;
+    }
+
+    header > h1 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+
+    .section-board {
+      transform: rotateX(60deg) rotateY(-10deg) rotateZ(50deg);
+      flex: 3;
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-template-rows: repeat(4, 100px);
+      gap: 20px;
+    }
+
+    .board-item {
+      position: relative;
+      top: 0;
+      left: 0;
+      background-color: dodgerblue;
+      transition: all .3s;
+    }
+
+    .board-item input {
+      display: none;
+    }
+
+    .board-item input:checked + label {
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      background-color: firebrick;
+    }
+
+    .board-item label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .board-item img {
+    }
+
+    .board-item:hover {
+      cursor: pointer;
+      top: -15px;
+      left: -15px;
+    }
+
+    .board-item::after{
+      z-index: -1;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      width: 100px;
+      height: 100px;
+      background-color: #ddd;
+      transition: all .3s;
+    }
+    
+    .board-item:hover::after{
+      position:absolute;
+      top: 30px;
+      left: 35px;
+    }
+
+
+    .board-item:nth-child(3n) {
+      background-color: darkorange;
+    }
+    .board-item:nth-child(3n-1) {
+      background-color: darkseagreen;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Codepen Clone</h1>
+  </header>
+  <section class="section-board">
+    <div class="board-item">
+      <input type="radio" id="radio-1" name="radio-group">
+      <label for="radio-1">1</label>
+      <!-- <img src="/images/hedgehog.jpg" alt=""> -->
+    </div>
+    <div class="board-item">
+      <input type="radio" id="radio-2" name="radio-group">
+      <label for="radio-2">2</label>
+    </div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+    <div class="board-item"></div>
+  </section>
+</body>
+
+</html>

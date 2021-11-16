@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <title>grid 정리</title>
+    <style>
+      .container-color {
+        background-color: tomato;
+        border: 5px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 30px;
+      }
+
+      .item-color {
+        background-color: darkcyan;
+        border: 5px solid black;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 5px;
+      }
+
+      .container {
+        display: grid;
+        /* grid-template-columns: 200px 500px 200px; */
+        /* fr - fraction */
+        /* grid-template-columns: 1fr 2.5fr 1fr; */
+        /* grid-template-columns: 25% 50% 25%; */
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-template-rows: 200px 500px 200px; */
+        grid-template-rows: 25% 50% 25%;
+
+        /* grid-template-rows: repeat(3, 1fr); */
+        /* gap: 20px; */
+        /* row-gap: 20px; */
+        column-gap: 20px;
+      }
+
+      /*
+        그리드 트랙: 행 또는 열
+        그리드 행 : 한 칸
+        그리드 라인 : 셀 구분 선(1번부터 시작)
+      */
+
+
+    </style>
+</head>
+<body>
+    <div class="container-color container">
+      <div class="item-color item">Lorem.</div>
+      <div class="item-color item">Lorem, ipsum.</div>
+      <div class="item-color item">Lorem, ipsum dolor.</div>
+      <div class="item-color item">Lorem ipsum dolor sit.</div>
+      <div class="item-color item">Lorem.</div>
+      <div class="item-color item">Lorem, ipsum.</div>
+      <div class="item-color item">Lorem, ipsum dolor.</div>
+      <div class="item-color item">Lorem ipsum dolor sit.</div>
+    </div>
+</body>
+</html>
