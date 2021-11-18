@@ -1,0 +1,118 @@
+* {
+  font-family: 'Noto Sans KR', snas-serif;
+  box-sizing: border-box;
+}
+
+.row-flex {
+  display: flex;
+  gap: 12px;
+}
+
+.flex-2 {
+  flex-grow: 2;
+}
+
+.flex-1 {
+  flex-grow: 1;
+}
+
+
+#app {
+  background-color: #EAE8FE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100vw;
+  height: 100vh;
+}
+
+section {
+  box-sizing: border-box;
+  padding: 31px 27px;
+  width: 360px;
+  height: 545px;
+  background-color: #fff;
+}
+
+.cont-select .ul-items {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cont-return {
+  margin-bottom: 12px;
+}
+
+.cont-return .info-return {
+  width: 200px;
+}
+
+.cont-return .btn-return {
+  width: 95px;
+}
+
+.cont-put {
+  margin-bottom: 12px;
+}
+
+.cont-return .inp-put {
+  width: 200px;
+}
+
+.cont-return .btn-put {
+  width: 95px;
+}
+
+.cont-selected  .ul-selected-items {
+  width: 200px;
+  height: 106px;
+}
+.cont-selected  .btn-get {
+  width: 95px;
+}
+
+#cont-my-info {
+  box-sizing: border-box;
+  background-color: #EAE8FE;
+  padding: 0;
+}
+
+.cont-my-budget {
+  background-color: #EAE8FE;
+  border-top: 9px solid #fff;
+  border-bottom: 9px solid #fff;
+  border-left: 27px solid #fff;
+  border-right: 27px solid #fff;
+  border-radius: 0;
+}
+
+.cont-get {
+  margin-top: 20px;
+  background-color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 30px 30px;
+}
+
+.cont-get h2 {
+  padding: 25px 0 13px
+}
+
+.cont-get .ul-get {
+  width: 306px;
+  height: 364px;
+  overflow-y:scroll;
+}
+
+.cont-total-price {
+  float: right;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  margin-top: 6px;
+}

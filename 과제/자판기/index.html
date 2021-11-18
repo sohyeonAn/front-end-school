@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="./css/moduel.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>ColaCola 자판기</title>
+</head>
+
+<body>
+  <main id="app">
+    <h1 class="tit-app blind">cola cola</h1>
+
+    <section id="cont-banding-machine">
+      <div class="cont-select">
+        <h2 class="blind">자판기 화면</h2>
+        <ul class="ul-items">
+          <li class="li-item">
+            <button type="button" data-item="originalCola" data-count="" data-price="1500" data-img=""
+              class="btn-item item-selected">
+              <img src="img/Original_Cola.png" alt="오리지널 콜라">
+              <strong class="txt-item">Original_Cola</strong>
+              <span class="txt-price">1500원</span>
+            </button>
+          </li>
+          <li class="li-item">
+            <button type="button" data-item="originalCola" data-count="" data-price="1500" data-img=""
+              class="btn-item item-soldout">
+              <img src="img/Original_Cola.png" alt="오리지널 콜라">
+              <strong class="txt-item">Original_Cola</strong>
+              <span class="txt-price">1500원</span>
+            </button>
+          </li>
+          <li class="li-item">
+            <button type="button" data-item="originalCola" data-count="" data-price="1500" data-img="" class="btn-item">
+              <img src="img/Original_Cola.png" alt="오리지널 콜라">
+              <strong class="txt-item">Original_Cola</strong>
+              <span class="txt-price">1500원</span>
+            </button>
+          </li>
+          <li class="li-item">
+            <button type="button" data-item="originalCola" data-count="" data-price="1500" data-img="" class="btn-item">
+              <img src="img/Original_Cola.png" alt="오리지널 콜라">
+              <strong class="txt-item">Original_Cola</strong>
+              <span class="txt-price">1500원</span>
+            </button>
+          </li>
+          <li class="li-item">
+            <button type="button" data-item="originalCola" data-count="" data-price="1500" data-img=""
+              class="btn-item item-selected">
+              <img src="img/Original_Cola.png" alt="오리지널 콜라">
+              <strong class="txt-item">Original_Cola</strong>
+              <span class="txt-price">1500원</span>
+            </button>
+          </li>
+          <li class="li-item">
+            <button type="button" data-item="originalCola" data-count="" data-price="1500" data-img="" class="btn-item">
+              <img src="img/Original_Cola.png" alt="오리지널 콜라">
+              <strong class="txt-item">Original_Cola</strong>
+              <span class="txt-price">1500원</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cont-return row-flex">
+        <div class="info-return info-gray ">
+          잔액 : <span class="txt-price txt-gray txt-right">1,000원</span>
+        </div>
+        <button class="btn-return btn-white ">거스름돈 반환</button>
+      </div>
+
+      <div class="cont-put row-flex">
+        <input type="number" class="inp-put " placeholder="입금액 입력">
+        <button class="btn-put btn-white ">입금</button>
+      </div>
+
+      <div class="cont-selected row-flex">
+        <strong class="blind">선택한 음료</strong>
+        <ul class="ul-selected-items">
+          <li class="li-selected-item">
+            <img src="./img/Original_Cola.png" alt="오리지널 콜라">
+            <strong class="txt-item">Original_Cola</strong>
+            <span class="txt-cnt">1</span>
+          </li>
+          <li class="li-selected-item">
+            <img src="./img/Original_Cola.png" alt="오리지널 콜라">
+            <strong class="txt-item">Original_Cola</strong>
+            <span class="txt-cnt">1</span>
+          </li>
+          <li class="li-selected-item">
+            <img src="./img/Original_Cola.png" alt="오리지널 콜라">
+            <strong class="txt-item">Original_Cola</strong>
+            <span class="txt-cnt">1</span>
+          </li>
+          <li class="li-selected-item">
+            <img src="./img/Original_Cola.png" alt="오리지널 콜라">
+            <strong class="txt-item">Original_Cola</strong>
+            <span class="txt-cnt">1</span>
+          </li>
+        </ul>
+        <button class="btn-get btn-purple">획득</button>
+      </div>
+    </section>
+
+    <section id="cont-my-info">
+      <div class="cont-my-budget info-gray">
+        소지금 : <span class="txt-right">25,000 원</span>
+      </div>
+
+      <div class="cont-get">
+        <h2>획득한 음료</h2>
+        <ul class="ul-get ul-selected-items">
+          <li class="li-get li-selected-item">
+            <img src="./img/Original_Cola.png" alt="오리지널 콜라">
+            <strong class="txt-item">Original_Cola</strong>
+            <span class="txt-cnt">1</span>
+          </li>
+          <li class="li-get li-selected-item">
+            <img src="./img/Original_Cola.png" alt="오리지널 콜라">
+            <strong class="txt-item">Original_Cola</strong>
+            <span class="txt-cnt">1</span>
+          </li>
+          <li class="li-get li-selected-item">
+            <img src="./img/Original_Cola.png" alt="오리지널 콜라">
+            <strong class="txt-item">Original_Cola</strong>
+            <span class="txt-cnt">1</span>
+          </li>
+          <li class="li-get li-selected-item">
+            <img src="./img/Original_Cola.png" alt="오리지널 콜라">
+            <strong class="txt-item">Original_Cola</strong>
+            <span class="txt-cnt">1</span>
+          </li>
+        </ul>
+
+        <div class="cont-total-price">
+          총금액 : <span class="txt-price">9,000원</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <script src="./script/script.js"></script>
+</body>
+
+</html>
