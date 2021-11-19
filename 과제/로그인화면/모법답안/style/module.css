@@ -14,6 +14,7 @@
 .btn-close {
   width: 16px;
   height: 16px;
+  padding: 0;
   background: none;
   border: none;
   cursor: pointer;
@@ -69,7 +70,7 @@
   color: #767676;
   text-decoration: none;
   text-align: center;
-  border: 1px solid #000;
+  border: 1px solid #767676;
   box-sizing: border-box;
   border-radius: 5px;
   text-indent: -38px;
@@ -77,11 +78,11 @@
 
 .link-sns-login::before {
   display: block;
-  content: "";
-  float: left;
-  background-size: 28px;
-  width: 28px;
-  height: 28px;
+  content:"";
+  float:left;
+  width:28px;
+  height:28px;
+  margin-left:16px;
 }
 
 .link-sns-login.icon-google {
