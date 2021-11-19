@@ -47,8 +47,7 @@ button {
 }
 
 .btn-item.item-selected {
-  border: 3px solid #6327FE;
-  box-shadow: none;
+  box-shadow: 0 0 0 3px #6327FE;
 }
 
 .btn-item.item-soldout {
