@@ -90,7 +90,7 @@
 }
 
 .link-sns-login.icon-google::before {
-  background-image: url(../../images/google_logo.png);
+  background-image: url(../images/google_logo.png);
 }
 
 .link-sns-login.icon-naver {
@@ -98,19 +98,19 @@
 }
 
 .link-sns-login.icon-naver::before {
-  background-image: url(../../images/naver_logo.png);
+  background-image: url(../images/naver_logo.png);
 }
 .link-sns-login.icon-facebook {
   border-color: #2d9cdb;
 }
 
 .link-sns-login.icon-facebook::before {
-  background: url(../../images/facebook_logo.png) center no-repeat;
+  background: url(../images/facebook_logo.png) center no-repeat;
 }
 .link-sns-login.icon-kakao {
   border-color: #f2c94c;
 }
 
 .link-sns-login.icon-kakao::before {
-  background-image: url(../../images/kakao_logo.png);
+  background-image: url(../images/kakao_logo.png);
 }

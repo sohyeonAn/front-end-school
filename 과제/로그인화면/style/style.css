@@ -121,12 +121,12 @@ body {
   margin-right: 8px;
   width: 22px;
   height: 22px;
-  background-image: url(../../images/uncheck.png);
+  background-image: url(../images/uncheck.png);
   vertical-align: -5px;
 }
 
 .form-login .inp-hold:checked + .label-hold::before {
-  background-image: url(../../images/checked.png);
+  background-image: url(../images/checked.png);
 }
 
 .form-login .inp-hold:focus + .label-hold::before {
