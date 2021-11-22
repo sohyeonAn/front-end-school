@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>clip</title>
+  <style>
+    div {
+      position:relative;
+      width: 500px;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* top left bottom right */
+      clip: rect(10px 300px 300px 10px); 
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <img src="https://blog.kakaocdn.net/dn/HFTws/btrfn489Kju/ZUpMjo2A5l5AYt7BLikq2K/img.gif" alt="공유">
+  </div>
+</body>
+
+</html>
