@@ -1,0 +1,6 @@
+$val1: 20px;
+$val2: 4;
+
+div {
+  font-size: ($val1 / $val2);
+}

@@ -1,0 +1,18 @@
+ul {
+  li {
+    cursor: pointer;
+
+    &:hover {
+      background: pink;
+      // 가상요소 
+    }
+
+    &:last-child {
+      border-bottom: 2px solid black;
+      // 가상클래스 
+    }
+  }
+}
+
+//li 태그의 가상요소와 가상클래스에게 스타일을 적용한 예시 
+//&을 사용하여 li와 :hover, :last-child를 연결

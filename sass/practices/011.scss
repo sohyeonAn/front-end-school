@@ -1,0 +1,19 @@
+// Sass 공식문서
+//Sass 공식문서
+
+@debug 100px > 10s;
+// Error: Incompatible units px and s
+
+@debug 100 > 50px; // true
+@debug 10px < 17; // true
+// Not Error
+
+// 숫자
+@debug 1px == 1px; // true
+@debug 1px != 1em; // true
+
+
+@debug 10s + 15s; // 25s
+@debug 1in - 10px; // 0.8958333333in
+@debug 5px * 3px; // 15px*px
+@debug 1in % 9px; // 0.0625in (1in == 96px)

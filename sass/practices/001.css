@@ -1,0 +1,22 @@
+nav {
+  background: #C39BD3;
+  padding: 10px;
+  height: 50px;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav ul li {
+  color: white;
+  margin-right: 10px;
+  font-size: 20px;
+}
+/*# sourceMappingURL=001.css.map */

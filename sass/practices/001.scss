@@ -1,0 +1,18 @@
+nav {
+  background: #C39BD3;
+  padding: 10px;
+  height: 50px;
+
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+
+    li {
+      color: white;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+  }
+
+}

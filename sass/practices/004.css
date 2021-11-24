@@ -1,0 +1,12 @@
+ul li {
+  cursor: pointer;
+}
+
+ul li:hover {
+  background: pink;
+}
+
+ul li:last-child {
+  border-bottom: 2px solid black;
+}
+/*# sourceMappingURL=004.css.map */
