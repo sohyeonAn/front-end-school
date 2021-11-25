@@ -29,6 +29,7 @@
       cursor: pointer;
       margin-bottom: 9px;
       text-align: left;
+      transition: all .2s;
     }
 
     .btn-select::after {
@@ -53,11 +54,8 @@
     }
 
     .cont-select .list-member {
-      box-sizing: border-box;
-      display: inline-block;
       width: 100%;
       border: 1px solid #C4C4C4;
-      box-sizing: border-box;
       box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
       border-radius: 10px;
     }
@@ -66,16 +64,18 @@
       display: none;
     }
     
+    .cont-select .list-member li {
+      padding: 5px 8px;
+    }
+    
     .cont-select .list-member li>button {
-      display: block;
-      width: 184px;
+      width: 100%;
       height: 30px;
       background-color: #fff;
       border-radius: 8px;
       border: none;
       font-size: 14px;
       line-height: 16px;
-      margin: 5px 8px;
       cursor: pointer;
     }
 
