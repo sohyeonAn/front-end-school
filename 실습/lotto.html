@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로또 번호 뽑기</title>
+  <style>
+    
+    ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 10px 0 0;
+    }
+
+    li {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+      text-align: center;
+      line-height: 50px;
+      vertical-align: middle;
+    }
+    
+    .cont-nums {
+      height: 100px;
+    }
+    .cont-nums li {
+      background-color: pink;
+    }
+    
+    .cont-result.on {
+      display: block;
+    }
+
+    .cont-result {
+      display: none;
+    }
+
+    .cont-result li {
+      background-color: aquamarine;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>로또 추첨</h1>
+  <section class='cont-shuffle'>
+    <h2>로또 번호 랜덤 뽑기</h2>
+    <button type="button" class='btn-shuffle'>번호 뽑기</button>
+    <div class='cont-nums'></div>
+  </section>
+  <button type="button" class='btn-winning-check'>당첨 확인</button>
+  <button type="button" class='btn-reset' disabled=true>다시 뽑기</button>
+  <section class='cont-result'>
+    <h2>오늘의 당첨 번호</h2>
+  </section>
+
+  <script>
+    // variables
+    const LOTTO_MIN_NUM = 1;
+    const LOTTO_MAX_NUM = 45;
+    const LOTTO_NUM_COUNT = 6;
+
+    const btnShuffle = document.querySelector('.btn-shuffle');
+    const btnReset = document.querySelector('.btn-reset');
+    const btnWinningCheck = document.querySelector('.btn-winning-check');
+    const contNums = document.querySelector('.cont-nums');
+    const contResult = document.querySelector('.cont-result');
+    const txtResult = document.querySelector('.txt-result');
+
+    let shuffleNums = [];
+    let winningNums = getLottoNumsArr();
+
+    // 당첨번호는 변하지 않으므로 당첨결과컨테이너(cont-result)에 미리 세팅한다.
+    addNumsOnScreen(winningNums, contResult);
+
+    // event listners
+    btnShuffle.addEventListener('click', () => {
+      removeNumsOnScreen();
+      shuffleNums = getLottoNumsArr();
+      addNumsOnScreen(shuffleNums, contNums);
+    });
+
+    btnReset.addEventListener('click', () => {
+      btnShuffle.disabled = false;
+      btnReset.disabled = true;
+      contResult.classList.remove('on');
+      removeNumsOnScreen();
+    });
+
+    btnWinningCheck.addEventListener('click', () => {
+      if (!contResult.classList.contains('on')) {
+        if (shuffleNums.length > 0) {
+          btnShuffle.disabled = true;
+          btnReset.disabled = false;
+          contResult.classList.add('on');
+        } else {
+          contResult.classList.remove('on');
+        }
+      }
+    });
+
+    //functions
+    /**
+     * numsArr: 화면에 보여줄 번호를 담은 array
+     * container: 번호를 담을 요소(부모)
+    */
+    function addNumsOnScreen(numsArr, container) {
+      const numsUl = document.createElement('ul');
+
+      numsArr.forEach(el => {
+        let numEl = document.createElement('li');
+        numEl.innerText = el;
+        numsUl.appendChild(numEl);
+      });
+
+      container.appendChild(numsUl);
+    }
+
+
+    function removeNumsOnScreen() {
+      if (contNums.hasChildNodes()) {
+        // 당첨번호가 이미 화면에 있다면 화면에서 제거.
+        contNums.removeChild(contNums.firstElementChild);
+      }
+    }
+
+    function randomNum(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+
+
+    /**
+     * 로또 방식에 맞게 숫자를 랜덤으로 뽑고 
+     * 뽑아진 숫자를 array로 반환.
+    */ 
+    function getLottoNumsArr() {
+      let numbers = new Set();
+      while (numbers.size < LOTTO_NUM_COUNT) {
+        numbers.add(randomNum(LOTTO_MIN_NUM, LOTTO_MAX_NUM + 1));
+      }
+      return [...numbers].sort((a, b) => a - b); // 오름차순
+    }
+  </script>
+</body>
+
+</html>
