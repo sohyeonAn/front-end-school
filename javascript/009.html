@@ -39,29 +39,32 @@
 
 <body>
   <div class="box"></div>
-  <ul>
+  <ul class="cont-btn">
     <li><button type="button" class="btn-red">빨강</button></li>
     <li><button type="button" class="btn-yellow">노랑</button></li>
     <li><button type="button" class="btn-green">초록</button></li>
   </ul>
 
   <script>
-    let buttons = document.querySelectorAll()
+    let btnCollection = document.querySelector('.cont-btn').getElementsByTagName('button');
+    let btnArr = [...btnCollection];
+    
     const box = document.querySelector('.box');
-    const btnRed = document.querySelector('.btn-red');
-    const btnYellow = document.querySelector('.btn-yellow');
-    const btnGreen = document.querySelector('.btn-green');
+    // const btnRed = document.querySelector('.btn-red');
+    // const btnYellow = document.querySelector('.btn-yellow');
+    // const btnGreen = document.querySelector('.btn-green');
 
-    let buttons = [btnRed, btnYellow, btnGreen];
+    // //let buttons = [btnRed, btnYellow, btnGreen];
     let colors = ['red', 'yellow', 'green'];
 
-    buttons.forEach(btn => {
+    btnArr.forEach(btn => {
       btn.addEventListener('click', () => {
         let selectColor = btn.className.slice(4); // 'btn-' 이후부터 가져오기
         colors.forEach(color => {
           selectColor === color ? box.classList.add(color) : box.classList.remove(color);
         });
       });
+      console.log(btn);
     });
 
 
