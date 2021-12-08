@@ -37,13 +37,13 @@
   </table>
 
   <canvas id="myChart" width="400" height="400"></canvas>
-  
+
   <script src='data.js'></script>
   <script>
     const thEls = document.getElementsByTagName('th');
     let click = true;
     console.log(thEls);
-    
+
     [...thEls].forEach(el => {
       el.addEventListener('click', function () {
         const sortByVal = el.textContent;
@@ -127,7 +127,7 @@
         }
       }
     });
-  </script>
+    </script>
 
 
 </body>

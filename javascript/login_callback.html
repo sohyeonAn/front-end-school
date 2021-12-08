@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>로그인 페이지(콜백 지옥 만들기)</title>
+</head>
+
+<script>
+  let userdb = [{
+      "_id": "61b05e654c8a5aab1b06d812",
+      "id": "Padilla",
+      "pw": "d0902475-42c8-47a8-9b2d-067a97c0d54f",
+      "index": 0,
+      "picture": "http://placehold.it/32x32",
+      "age": 37,
+      "eyeColor": "blue",
+      "name": "Jennifer Pickett",
+      "gender": "female",
+      "company": "VELITY",
+      "email": "jenniferpickett@velity.com",
+      "phone": "+1 (876) 538-2633",
+      "address": "421 Overbaugh Place, Mapletown, Guam, 260",
+      "grade": "새싹"
+    },
+    {
+      "_id": "61b05e65882a2f36969af402",
+      "id": "sohyeon",
+      "pw": "123",
+      "index": 1,
+      "picture": "http://placehold.it/32x32",
+      "age": 22,
+      "eyeColor": "blue",
+      "name": "Graves Curtis",
+      "gender": "male",
+      "company": "FREAKIN",
+      "email": "gravescurtis@freakin.com",
+      "phone": "+1 (914) 419-2729",
+      "address": "518 Durland Place, Montura, West Virginia, 4725",
+      "grade": "관리자"
+    },
+    {
+      "_id": "61b05e6569c4753e76103945",
+      "id": "Christina",
+      "pw": "f8214263-d3ca-43a4-91b2-02b96477b647",
+      "index": 2,
+      "picture": "http://placehold.it/32x32",
+      "age": 29,
+      "eyeColor": "green",
+      "name": "Roslyn Knight",
+      "gender": "female",
+      "company": "STROZEN",
+      "email": "roslynknight@strozen.com",
+      "phone": "+1 (922) 581-3346",
+      "address": "512 Brigham Street, Idamay, Georgia, 6005",
+      "grade": "새싹"
+    },
+    {
+      "_id": "61b05e65dc714f4a259f7bf2",
+      "id": "Jerry",
+      "pw": "4fa018e9-558f-487f-8b2d-3ade0ae32593",
+      "index": 3,
+      "picture": "http://placehold.it/32x32",
+      "age": 27,
+      "eyeColor": "brown",
+      "name": "Deirdre Welch",
+      "gender": "female",
+      "company": "RODEMCO",
+      "email": "deirdrewelch@rodemco.com",
+      "phone": "+1 (850) 499-2367",
+      "address": "412 Visitation Place, Clarence, Nevada, 1257",
+      "grade": "일반"
+    },
+    {
+      "_id": "61b05e65c28a696310457f7c",
+      "id": "Tucker",
+      "pw": "203a483d-8dd3-4381-9481-8e053a248041",
+      "index": 4,
+      "picture": "http://placehold.it/32x32",
+      "age": 40,
+      "eyeColor": "brown",
+      "name": "Flores Macias",
+      "gender": "male",
+      "company": "KOG",
+      "email": "floresmacias@kog.com",
+      "phone": "+1 (811) 404-3782",
+      "address": "930 Willow Street, Nettie, Marshall Islands, 6564",
+      "grade": "실버"
+    },
+    {
+      "_id": "61b05e65df4e13f97a0695ec",
+      "id": "Dickerson",
+      "pw": "8850cadd-23d3-45db-ab9b-f1eb86b6702e",
+      "index": 5,
+      "picture": "http://placehold.it/32x32",
+      "age": 29,
+      "eyeColor": "green",
+      "name": "Green Ray",
+      "gender": "male",
+      "company": "POLARAX",
+      "email": "greenray@polarax.com",
+      "phone": "+1 (816) 522-3762",
+      "address": "268 Robert Street, Singer, Arkansas, 821",
+      "grade": "관리자"
+    },
+    {
+      "_id": "61b05e6547bd474953165f5e",
+      "id": "Ratliff",
+      "pw": "47da3ebc-31b0-4cd7-9436-7bd61bb72c63",
+      "index": 6,
+      "picture": "http://placehold.it/32x32",
+      "age": 35,
+      "eyeColor": "green",
+      "name": "Hodge Edwards",
+      "gender": "male",
+      "company": "PERKLE",
+      "email": "hodgeedwards@perkle.com",
+      "phone": "+1 (965) 444-3974",
+      "address": "329 Jamaica Avenue, Stockdale, Louisiana, 8233",
+      "grade": "새싹"
+    },
+    {
+      "_id": "61b05e652d7d3ba308a9842b",
+      "id": "Dean",
+      "pw": "877d8f3f-9927-424b-93d6-6e73290b35e6",
+      "index": 7,
+      "picture": "http://placehold.it/32x32",
+      "age": 33,
+      "eyeColor": "brown",
+      "name": "Mayra Merrill",
+      "gender": "female",
+      "company": "VETRON",
+      "email": "mayramerrill@vetron.com",
+      "phone": "+1 (954) 564-3442",
+      "address": "992 Glendale Court, Hartsville/Hartley, Wisconsin, 3434",
+      "grade": "실버"
+    }
+  ];
+
+
+  class User {
+    login(id, pwd, successs, fail) {
+      const userData = userdb.find(user => user.id === id && user.pw === pwd);
+      if (userData) {
+        successs(id);
+      } else {
+        fail(new Error('로그인 실패'));
+      }
+    }
+
+    getUserInfo(userId, success, fail) {
+      const userInfo = userdb.find(user => user.id === userId);
+      if (userInfo) {
+        success({
+          id: userInfo.id,
+          name: userInfo.name,
+          pictrue: userInfo.picture,
+          company: userInfo.company,
+          email: userInfo.email,
+          grade: userInfo.grade
+        });
+      } else {
+        fail(new Error('데이터 베이스 로드 실패!'));
+      }
+    }
+  }
+
+  // const user = new User();
+  const id = 'sohyeon';
+  const pwd = '123';
+  user.login(
+    id,
+    pwd, 
+    // login의 sucees 콜백 함수
+    (userId) => {
+      
+      user.getUserInfo(
+        userId,
+        // getUserInfo의 success 콜백 함수
+        (userInfo) => {
+          console.log(userInfo);
+        },
+        // getUserInfo의 fail 콜백 함수
+        (error) => {console.log(error)}
+      )
+    }, 
+    // login의 fail 콜백 함수
+    (error) => {console.log(error)}
+  );
+
+  // class 없이 만들기
+  // const id = 'sohyeon';
+  // const pwd = '123';
+
+  // function loginSuccess(userId) {
+  //   getUserInfo(userId, loadUserInfoSuccess, loadUserInfoFail);
+  // }
+
+  // function loginFail(error){
+  //   console.log(error);
+  // }
+
+  // function loadUserInfoSuccess(userInfo){
+  //   console.log(userInfo)
+  // }
+
+  // function loadUserInfoFail(error){
+  //   console.log(error);
+  // }
+
+  // // login 함수를 부르는 것에서 시작합니다!
+  // login(
+  //   id,
+  //   pwd, 
+  //   loginSuccess,
+  //   loginFail
+  // );
+
+  // function login(id, pwd, successs, fail) {
+  //   const userData = userdb.find(user => user.id === id && user.pw === pwd);
+  //   if (userData) {
+  //     successs(id);
+  //   } else {
+  //     fail(new Error('로그인 실패'));
+  //   }
+  // }
+
+  // function getUserInfo(userId, success, fail) {
+  //   const userInfo = userdb.find(user => user.id === userId);
+  //   if (userInfo) {
+  //     success({
+  //       id: userInfo.id,
+  //       name: userInfo.name,
+  //       pictrue: userInfo.picture,
+  //       company: userInfo.company,
+  //       email: userInfo.email,
+  //       grade: userInfo.grade
+  //     });
+  //   } else {
+  //     fail(new Error('데이터 베이스 로드 실패!'));
+  //   }
+  // }
+
+</script>
+
+<body>
+
+</body>
+
+</html>
