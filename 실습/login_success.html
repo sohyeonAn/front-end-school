@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <title>로그인 성공</title>
+</head>
+
+<body>
+  <section class='cont-login-success'>
+    <p class="txt-greeting">hello</p>
+  </section>
+  <button type="button" class="btn-logout">로그아웃</button>
+
+  <script>
+    // function getURLParameter(name) {
+    // return decodeURI(
+    // (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1]
+    // );
+    // }
+
+    // function getURLParameter2(name) {
+    // return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [,
+    // ""
+    // ])[1].replace(/\+/g, '%20')) || null
+    // }
+    // $(document).ready(function () {
+    // // console.log('val : ' + getURLParameter('index'));
+    // console.log('val : ' + getURLParameter2('index'));
+    // });
+    var getParameter = function (param) {
+      var returnValue;
+      var url = location.href;
+      var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&');
+      for (var i = 0; i < parameters.length; i++) {
+        var varName = parameters[i].split('=')[0];
+        if (varName.toUpperCase() == param.toUpperCase()) {
+          returnValue = parameters[i].split('=')[1];
+          return decodeURIComponent(returnValue);
+        }
+      }
+    };
+
+    $(document).ready(function () {
+      let userName = getParameter('userName');
+      let coin = getParameter('coin');
+      let grade = getParameter('grade');
+      $('.txt-greeting').html(
+        `${userName}님 환영합니다. 멋사코인 ${coin}억원, 등급 ${grade}`);
+    });
+
+    $('.btn-logout').click(function(){
+      location.replace('./ajax_login.html');
+    });
+
+  </script>
+</body>
+
+</html>

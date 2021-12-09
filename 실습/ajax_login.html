@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ajax 통신 연습</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <label>아이디: <input type="text" class="inp-id"></label>
+    <label>패스워드: <input type="password" class="inp-pwd"></label>
+    <button type="submit">로그인</button>
+  </form>
+
+  <section class='cont-login-success hide'>
+    <p class="txt-greeting"></p>
+  </section>
+  <section class='cont-login-fail hide'>
+    <p class="txt-fail"></p>
+  </section>
+  <script>
+    //variables
+    let id = '';
+    let pwd = '';
+    $('form').submit(function (e) {
+      // submit 버튼 누를 떄 자동으로 reload 되지 않게함. 
+      e.preventDefault();
+      id = $('.inp-id').val();
+      pwd = $('.inp-pwd').val();
+
+      /*(선택사항) 실력이 되시는 분들은 로그인 성공 페이지와, 로그인 실패 페이지를 별도로 설계합니다.*/
+      $.ajax({
+        url: 'https://raw.githubusercontent.com/sohyeonAn/ajax-login-test/main/userdata.json',
+        async: true,
+        success: function (result) {
+          const userdb = JSON.parse(result);
+          if (loginValidation(userdb)) {
+            let user = getUserInfo(userdb);
+            let coin = user.phone.slice(-4);
+            // 현재 페이지에 로그인 성공 추가하기
+            // $('.cont-login-success').removeClass('hide');
+            // $('.txt-greeting').html(`${user.name}님 환영합니다. 멋사코인 ${coin}억원, 등급 ${user.grade}`);
+            // // alert('login success');
+
+            // 로그인 성공 페이지로 이동
+            let url = './login_success.html?';
+            let param = `userName=${user.name}&coin=${coin}&grade=${user.grade}`;
+            location.href = url + param;
+          } else {
+            // 현재 페이지에 로그인 실패 추가하기
+            // $('.cont-login-fail').removeClass('hide');
+            // $('.txt-fail').html('아이디 또는 패스워드를 다시 입력해주세요.');
+            // alert('login fail');
+
+            // 로그인 실패 페이지로 이동
+            location.href = './login_fail.html'
+          }
+        }
+      });
+
+    });
+
+    function loginValidation(userdb) {
+      let findUser = userdb.find(user => user.id === id && user.pw === pwd);
+      if (findUser) {
+        return true;
+      }
+      return false;
+    }
+
+    function getUserInfo(userdb) {
+      let user = userdb.find(user => user.id === id && user.pw === pwd);
+      return user;
+    }
+  </script>
+</body>
+
+</html>
