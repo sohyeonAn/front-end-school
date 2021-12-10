@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./모범답안/style.css">
+  <title>custom select-list를 js로 생성하기</title>
+</head>
+
+<body>
+  <h2>셀렉트 박스 만들기</h2>
+  <article class="cont-select">
+    <button class="btn-select">최애 프로그래밍 언어</button>
+    <ul class="list-member"></ul>
+  </article>
+
+  <script>
+    const selectBtnEl = document.querySelector('.btn-select');
+    const ulEl = document.querySelector('.list-member');
+
+    const langArr = ['Java', 'JavaScript', 'Python', 'C#', 'C/C++', 'Go', 'Scala', 'R'];
+
+    for (let i = 0; i < langArr.length; i++) {
+      const liEl = document.createElement('li');
+      const btnEl = document.createElement('button');
+      btnEl.type = 'button';
+      btnEl.textContent = langArr[i];
+
+      liEl.appendChild(btnEl);
+      ulEl.appendChild(liEl);
+    }
+
+    const lastLiBtn = ulEl.lastElementChild.firstElementChild;
+    const firstLiBtn = ulEl.firstElementChild.firstElementChild;
+    //focus 마지막에 도달하면 처음으로 이동
+    const handleTabFoucus = function (e) {
+      if (!e.shiftKey && e.keyCode === 9) {
+        e.preventDefault();
+        window.setTimeout(function () {
+          firstLiBtn.focus();
+        }, 50);
+      }
+    };
+
+    //shift+tab 처음에 도달하면 마지막으로 이동
+    const handleShiftTabFoucus = function (e) {
+      if (e.shiftKey && e.keyCode === 9) {
+        e.preventDefault();
+        window.setTimeout(function () {
+          lastLiBtn.focus();
+        }, 50);
+      }
+    };
+
+    //ESC키 
+    const handleEsc = function (e) {
+      if (e.keyCode === 27) {
+        selectBtnEl.classList.remove('on');
+        window.setTimeout(function () {
+          selectBtnEl.focus();
+        }, 50);
+      }
+    };
+
+    selectBtnEl.addEventListener('click', () => {
+      selectBtnEl.classList.toggle('on');
+      // if (btn.classList.contains('on')) {
+      //   for (let i = 0; i < liItemArr.length; i++) {
+      //     const liEl = document.createElement('li');
+      //     const btnEl = document.createElement('button');
+      //     btnEl.type = 'button';
+      //     btnEl.textContent = itemArr[i];
+
+      //     liEl.appendChild(btnEl);
+      //     list.appendChild(liEl);
+      //   }
+      // } else {
+      //   removeAllChildren(list);
+      // }
+    });
+
+    ulEl.addEventListener('click', (event) => {
+      if (event.target.nodeName === "BUTTON") {
+        selectBtnEl.textContent = event.target.textContent;
+        selectBtnEl.classList.remove('on');
+        window.setTimeout(function () {
+          selectBtnEl.focus();
+        }, 100);
+        // removeAllChildren(list);
+      }
+    });
+
+    selectBtnEl.addEventListener('keydown', handleEsc);
+    ulEl.addEventListener('keydown', handleEsc);
+
+    ulEl.lastElementChild.addEventListener('keydown', handleTabFoucus);
+    ulEl.firstElementChild.addEventListener('keydown', handleShiftTabFoucus);
+
+    // function removeAllChildren(parent) {
+    //   while (parent.hasChildNodes()) {
+    //     parent.removeChild(parent.firstChild);
+    //   }
+    // }
+  </script>
+</body>
+
+</html>
