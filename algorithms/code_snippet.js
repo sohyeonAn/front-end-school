@@ -147,92 +147,185 @@
 // console.log(s);
 
 // 연결리스트(Linked List)
-const list = {
-  head: {
-    value: 90,
-    next: {
-      value: 2,
-      next: {
-        value: 77,
-        next: {
-          value: 35,
-          next: null
-        }
-      }
+// const list = {
+//   head: {
+//     value: 90,
+//     next: {
+//       value: 2,
+//       next: {
+//         value: 77,
+//         next: {
+//           value: 35,
+//           next: null
+//         }
+//       }
+//     }
+//   }
+// };
+
+// class Node {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
+
+// class LinkedList {
+//   constructor() {
+//     let init = new Node('init');
+//     this.head = init;
+//     this.tail = init;
+
+//     this.cnt = 0;
+//   }
+
+//   get fullData() {
+//     let currNode = this.head;
+//     currNode = currNode.next;
+
+//     let s = ''
+//     for (let i = 0; i < this.cnt; i++) {
+//       s += `${currNode.data}, `;
+//       currNode = currNode.next;
+//     }
+//     return JSON.parse(`[${s.slice(0, -2)}]`);
+//   }
+
+//   length() {
+//     return this.cnt;
+//   }
+
+//   append(value) {
+//     let newNode = new Node(value);
+//     this.tail.next = newNode;
+//     this.tail = newNode;
+//     this.cnt += 1;
+//   }
+
+//   insert(index, value) {
+//     let currNode = this.head;
+//     for (let i = 0; i < index; i++) {
+//       currNode = currNode.next;
+//     }
+
+//     let newNode = new Node(value);
+//     newNode.next = currNode.next;
+//     currNode.next = newNode;
+//     this.cnt += 1;
+//   }
+
+//   toString() {
+//     let currNode = this.head;
+//     currNode = currNode.next;
+
+//     let s = '';
+//     for (let i = 0; i < this.cnt; i++) {
+//       s += `${currNode.value}, `;
+//       currNode = currNode.next;
+//     }
+
+//     return s.slice(0, -2);
+//   }
+// }
+
+// let list = new LinkedList();
+// list.append(10);
+// list.append(20);
+// list.append(30);
+// list.append(40);
+// list.insert(1, 15);
+// list.toString();
+
+// 정렬
+// 선택정렬
+// let input = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+// let inputLen = input.length;
+// let sorted = [];
+
+// for (let i = 0; i < inputLen; i++) {
+//   let min = Math.min(...input);
+//   sorted.push(min);
+//   input.splice(input.indexOf(min), 1);
+// }
+
+// console.log(sorted);
+
+// 삽입정렬
+// let 입력값 = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+// let 정렬된배열 = [];
+// let 배열의길이 = 입력값.length;
+
+// function 삽입값이들어갈인덱스(정렬된배열, 삽입값){
+//     for (const i in 정렬된배열) {
+//         if (삽입값 < 정렬된배열[i]) {
+//             return i
+//         }
+//     }
+//     return 정렬된배열.length;
+// }
+
+// for (let i = 0; i < 배열의길이; i++) {
+//     let 삽입값 = 입력값.shift()
+//     let 인덱스 = 삽입값이들어갈인덱스(정렬된배열, 삽입값);
+//     정렬된배열.splice(인덱스, 0, 삽입값);
+//     console.log(`인덱스 : ${인덱스}\n삽입값 : ${삽입값}\n 정렬된배열 : ${정렬된배열}\n`)
+// }
+
+// 병합정렬
+// function mergeSort(input){
+//   let inputLen = input.length;
+//   let result = [];
+
+//   if(inputLen <= 1){
+//     return input;
+//   }
+
+//   let middle = parseInt(inputLen / 2);
+//   let grp1 = mergeSort(input.slice(0, middle));
+//   let grp2 = mergeSort(input.slice(middle));
+
+//   while(grp1.length !== 0 && grp2.length !== 0){
+//     if(grp1[0] <= grp2[0]){
+//       result.push(grp1.shift());
+//     } else {
+//       result.push(grp2.shift());
+//     }
+//   }
+//   while(grp1.length > 0){
+//     result.push(grp1.shift());
+//   }
+//   while(grp2.length > 0){
+//     result.push(grp2.shift());
+//   }
+
+//   return result;
+// }
+
+// let input = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+// console.log(mergeSort(input));
+
+
+// 퀵 정렬
+function quickSort(input){
+  let inputLen = input.length;
+
+  if(inputLen <= 1){
+    return input;
+  }
+
+  const pivot = input.shift(); // 기준값
+  const grp1 = [];
+  const grp2 = [];
+
+  for(let i in input) {
+    if(input[i] < pivot){
+      grp1.push(input[i]);
+    } else {
+      grp2.push(input[i]);
     }
   }
-};
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
+  return quickSort(grp1).concat(pivot, quickSort(grp2));
 }
-
-class LinkedList {
-  constructor() {
-    let init = new Node('init');
-    this.head = init;
-    this.tail = init;
-
-    this.currNode = undefined;
-    this.cnt = 0;
-  }
-
-  length() {
-    return this.cnt;
-  }
-
-  append(value) {
-    let newNode = new Node(value);
-    this.tail.next = newNode;
-    this.tail = newNode;
-    this.cnt += 1;
-  }
-
-  add(index, value) {
-    let newNode = new Node(value);
-    let currNode = this.head;
-    for (let i = 0; i < index; i++) {
-      currNode = currNode.next;
-    }
-
-    newNode.next = currNode.next;
-    currNode.next = newNode;
-    this.cnt += 1;
-  }
-
-  toString() {
-    let currNode = this.head;
-    currNode = currNode.next;
-
-    let s = '';
-    for (let i = 0; i < this.cnt; i++) {
-      s += `${currNode.value}, `;
-      currNode = currNode.next;
-    }
-
-    return s.slice(0, -2);
-  }
-
-  get fullData() {
-    let currNode = this.head;
-    currNode = currNode.next;
-
-    let s = ''
-    for (let i = 0; i < this.cnt; i++) {
-      s += `${currNode.data}, `;
-      currNode = currNode.next;
-    }
-    return JSON.parse(`[${s.slice(0, -2)}]`)
-  }
-}
-
-let list = new LinkedList();
-list.append(10);
-list.append(20);
-list.append(30);
-list.append(40);
-list.add(1, 15);
-list.toString();
+let input = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+console.log(quickSort(input));
