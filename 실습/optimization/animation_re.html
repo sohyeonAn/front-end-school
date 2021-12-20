@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation</title>
+  <style>
+    body {
+      margin: 100px;
+    }
+
+    .target {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      transition: .1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="target"></div>
+
+  <script>
+    const targetEl = document.querySelector('.target');
+    let pos = 0;
+    let keys = {};
+
+    document.addEventListener('keydown', move);
+    document.addEventListener('keyup', stop);
+
+    function move(e) {
+      keys[e.key] = true;
+    }
+
+    function stop(e) {
+      keys[e.key] = false;
+    }
+
+    function play() {
+      if (keys.ArrowRight) {
+        pos += 5;
+        targetEl.style.transform = `translateX(${pos}px)`;
+      }
+      if (keys.ArrowLeft) {
+        pos -= 5;
+        targetEl.style.transform = `translateX(${pos}px)`;
+      }
+
+      window.requestAnimationFrame(play);
+    }
+
+    window.requestAnimationFrame(play);
+  </script>
+</body>
+
+</html>

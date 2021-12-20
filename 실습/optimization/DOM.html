@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>돔 접근 테스트</title>
+</head>
+
+<body>
+  <h1>돔 접근 테스트</h1>
+  <main>
+    <!-- <article class="parent">
+      <figure>
+        <img
+          src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202112/13/e4725896-2596-44f0-8b95-ab3faaa76d7d.jpg"
+          alt="" class="figImg">
+        <figcaption class="figCap">유재석씨가 코로나에 감염되었다는 소식입니다!</figcaption>
+      </figure>
+    </article> -->
+  </main>
+
+  <script>
+    const main = document.querySelector('main');
+    const frag = document.createDocumentFragment();
+
+    for (let i = 0; i < 10; i++) {
+      const article = document.createElement('article');
+      const figure = document.createElement('figure');
+      const img = document.createElement('img');
+      const figCap = document.createElement('figcaption');
+
+      img.setAttribute('src','https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202112/13/e4725896-2596-44f0-8b95-ab3faaa76d7d.jpg');
+      figCap.textContent = '유재석씨가 코로나에 감염되었다는 소식입니다!';
+
+      figure.appendChild(img);
+      figure.appendChild(figCap);
+      article.appendChild(figure);
+
+      frag.appendChild(article);
+    }
+
+    main.appendChild(frag);
+  </script>
+</body>
+
+</html>

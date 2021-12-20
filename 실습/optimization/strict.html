@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>strict</title>
+</head>
+
+<body>
+  <script>
+    'use strict';
+    str = 'hello strict'; // ReferenceError: str is not defined
+    console.log(str); 
+
+    var undefined = 'undefined'; // Uncaught TypeError: Cannot assign to read only property 'undefined' of object '#<Window>'
+    console.log(undefined);
+
+    var Infinity = 100; // TypeError: Cannot assign to read only property 'Infinity' of object '#<Window>'
+    console.log(Infinity);
+    
+    Math.PI = 0; // Cannot assign to read only property 'PI' of object '#<Object>'
+    console.log(Math.PI);
+
+    const Emplyee = {
+      firstName: 'sohyeon',
+      lastName: 'An'
+    };
+
+    console.log(Emplyee.firstName);
+
+    delete Emplyee.firstName;
+
+    console.log(Emplyee.firstName);
+
+    delete Object.prototype; // Cannot delete property 'prototype' of function Object() { [native code] }
+
+    // function myFunc(a, a, b) {
+    //   console.log(a + a + b);
+    // }
+
+    // myFunc(1, 2, 3);
+  </script>
+</body>
+
+</html>
