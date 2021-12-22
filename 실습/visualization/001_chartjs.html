@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- chartjs cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- bootstrap cdn -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>chartjs</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="myChart-1"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="myChart-2"></canvas>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="myChart-3"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="myChart-4"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const labels = [
+      '1월',
+      '2월',
+      '3월',
+      '4월',
+      '5월',
+      '6월',
+      '7월',
+      '8월',
+      '9월',
+      '10월',
+      '11월',
+      '12월',
+    ];
+    const data_1 = {
+      labels: labels,
+      datasets: [{
+        label: '매출액 현황(억)',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [1, 2, 5, 2, 2, 3, 4, 3, 2, 1, 4, 5],
+      }]
+    };
+
+    const data_2 = {
+      labels: labels,
+      datasets: [{
+        label: '매출액 현황(억)',
+        backgroundColor: ['red', 'green', 'blue', 'tomato', 'orange', 'lime', 'gray', 'yellow', 'skyblue', 'pink', 'beige', 'brown'],
+        borderColor: 'black',
+        borderWidth: 0,
+        hoverBorderWidth: 3,
+        data: [1, 2, 5, 2, 2, 3, 4, 3, 2, 1, 4, 5],
+      }]
+    };
+
+    const data_3 = {
+      labels: labels,
+      datasets: [{
+        label: '매출액 현황(억)',
+        backgroundColor: ['tomato', 'orange', 'yellow', 'skyblue', 'pink', 'beige', 'brown'],
+        borderColor: 'black',
+        borderWidth: 0,
+        hoverBorderWidth: 3,
+        data: [1, 2, 5, 2, 2, 3, 4, 3, 2, 1, 4, 5],
+      }]
+    };
+
+    const config_1 = {
+      type: 'line', // line, pie, bar, line, doughnut, polarArea ...
+      data: data_1,
+      options: {}
+    };
+
+    const config_2 = {
+      type: 'bar', // line, pie, bar, line, doughnut, polarArea ...
+      data: data_2,
+      options: {}
+    };
+
+    const config_3 = {
+      type: 'bar', // line, pie, bar, line, doughnut, polarArea ...
+      data: data_3,
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: '매출액~~',
+            color: 'red',
+            position: 'bottom',
+            padding: {
+              top: 10,
+              bottom: 10
+            }
+          },
+          legend: {
+            display: true,
+            position: 'right',
+            labels: {
+              color: 'blue'
+            }
+          }
+        }
+      }
+    };
+
+    const config_4 = {
+      type: 'pie', // line, pie, bar, line, doughnut, polarArea ...
+      data: data_3,
+      options: {}
+    };
+
+    const myChart_1 = new Chart(
+      document.getElementById('myChart-1'),
+      config_1
+    );
+    const myChart_2 = new Chart(
+      document.getElementById('myChart-2'),
+      config_2
+    );
+    const myChart_3 = new Chart(
+      document.getElementById('myChart-3'),
+      config_3
+    );
+    const myChart_4 = new Chart(
+      document.getElementById('myChart-4'),
+      config_4
+    );
+  </script>
+</body>
+
+</html>

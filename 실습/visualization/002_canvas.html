@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawRect(ctx) {
+      let x = 10,
+        y = 10,
+        w = 150,
+        h = 100;
+      ctx.fillStyle = 'pink';
+      ctx.fillRect(x, y, w, h);
+    }
+
+    function drawTriangle(ctx) {
+      ctx.beginPath()
+      ctx.moveTo(75, 50);
+      ctx.lineTo(100, 75);
+      ctx.lineTo(100, 25);
+      ctx.fillStyle = 'skyblue';
+      ctx.fill();
+    }
+
+    drawRect(ctx);
+    drawTriangle(ctx);
+  </script>
+</body>
+
+</html>

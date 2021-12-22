@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <title>D3</title>
+</head>
+
+<body>
+  <div class="canvas"></div>
+  <script>
+    const canvas = d3.select('.canvas');
+
+    const svg = canvas.append('svg').attr('height', 1000).attr('width', 1000);
+
+    svg.append('text')
+      .attr('x', 250)
+      .attr('y', 200)
+      .attr('fill', 'pink')
+      .text('hello world')
+      .style('font-weight', 'bold')
+      .style('font-size', '34px');
+
+    svg.append('rect')
+      .attr('width', 200)
+      .attr('height', 200)
+      .attr('x', 10)
+      .attr('y', 10)
+      .style('fill', 'skyblue');
+
+
+    svg.append('circle')
+      .attr('r', 50)
+      .attr('cx', 100)
+      .attr('cy', 100)
+      .attr('fill', 'hotpink');
+
+    svg.append('line')
+      .attr('x1', 200)
+      .attr('y1', 200)
+      .attr('x2', 300)
+      .attr('y2', 300)
+      .attr('stroke', 'black');
+  </script>
+</body>
+
+</html>
