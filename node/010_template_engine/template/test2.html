@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>넌적스 테스트2</title>
+</head>
+
+<body>
+  {# 넌적스 주석 처리하는 법! #}
+  <h1>당신의 통장</h1>
+  <h2>예금</h2>
+  {% for i in 예금 %}
+  <p>{{i.은행명}}</p>
+  <p>{{i.계좌번호}}</p>
+  <p>{{i.금액}}</p>
+  {% endfor %}
+
+  <h2>기술:</h2>
+  {% for i in 기술%}
+  <p>{{i}}</p>
+  {% endfor %}
+
+  <h2>습득연도:</h2>
+  {% for i in 습득연도%}
+  <p>{{i[0]}} - {{i[1]}}</p>
+  {% endfor %}
+
+  <h2>습득연도2:</h2>
+  {% for i, j in 습득연도%}
+  <p>{{i}} - {{j}}</p>
+  {% endfor %}
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>넌적스 테스트 1</title>
+</head>
+
+<body>
+  <h1>hello world</h1>
+  <p id="name">{{ name }}</p>
+  <p id="age">{{ age }}</p>
+
+  <script>
+    document.getElementById('name').innerText = `헤이 모두들 안녕 내가 누군지 아니? {{ name }} 이다!`;
+    document.getElementById('age').innerText = `내 나이도 아니? {{ age }} 이다! `;
+  </script>
+</body>
+
+</html>

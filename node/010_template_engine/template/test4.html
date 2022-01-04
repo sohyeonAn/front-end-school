@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>넌적스 테스트 4</title>
+</head>
+
+<body>
+  {# 상속받는 곳(이름은 상속받는 파일이름이면 됩니다.) #}
+  {% extends 'base.html' %}
+
+  {% block content %}
+  <p>hello {{ name }}</p>
+  <p>hello world</p>
+  <p>hello world</p>
+  <p>hello world</p>
+  {% endblock %}
+</body>
+
+</html>
